@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'octokit'
 gem 'rack-test', :require => 'rack/test'
 
 group :development do
