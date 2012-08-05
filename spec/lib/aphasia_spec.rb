@@ -27,7 +27,7 @@ describe 'Aphasia' do
     it 'should raise an exception if the user doesn\'t exist' do
       expect do
         repos = @aphasia.user_repos 'auserthatdoesntexist'
-      end.to raise_error
+      end.to raise_error UserNotFound
     end
   end
 end

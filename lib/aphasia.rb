@@ -10,7 +10,7 @@ class Aphasia
 
   def user_repos(username)
     resp = @http_client.call("/users/#{username}/repos")
-    raise 'User not found!' if resp['message'].to_s == 'Not Found' if resp.is_a? Hash
+    raise UserNotFound.new(username) if resp['message'].to_s == 'Not Found' if resp.is_a? Hash
     create_repos_array(resp)
   end
 
