@@ -1,6 +1,7 @@
 require 'bundler'
 Bundler.require
 
+require './lib/exceptions/user_not_found'
 require './models/commit'
 require './models/repository'
 require './models/user'
