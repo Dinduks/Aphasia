@@ -1,0 +1,52 @@
+{
+  "repositories": [
+    {
+      "type": "repo",
+      "pushed": "2012-08-02T03:12:57-07:00",
+      "owner": "Dinduks",
+      "created_at": "2012-07-22T14:25:10-07:00",
+      "username": "Dinduks",
+      "has_downloads": true,
+      "followers": 2,
+      "stargazers": 2,
+      "created": "2012-07-22T14:25:10-07:00",
+      "has_wiki": true,
+      "watchers": 2,
+      "fork": false,
+      "size": 5192,
+      "has_issues": true,
+      "pushed_at": "2012-08-02T03:12:57-07:00",
+      "name": "dinduks.github.com",
+      "url": "https://github.com/Dinduks/dinduks.github.com",
+      "forks": 1,
+      "language": "JavaScript",
+      "description": "",
+      "private": false,
+      "open_issues": 0
+    },
+    {
+      "type": "repo",
+      "pushed": "2012-08-02T09:31:57-07:00",
+      "owner": "Zosoftw",
+      "created_at": "2012-08-02T09:01:23-07:00",
+      "username": "Zosoftw",
+      "has_downloads": true,
+      "followers": 1,
+      "stargazers": 1,
+      "created": "2012-08-02T09:01:23-07:00",
+      "has_wiki": true,
+      "watchers": 1,
+      "fork": true,
+      "size": 124,
+      "has_issues": false,
+      "pushed_at": "2012-08-02T09:31:57-07:00",
+      "name": "dinduks.github.com",
+      "url": "https://github.com/Zosoftw/dinduks.github.com",
+      "forks": 0,
+      "language": "JavaScript",
+      "description": "",
+      "private": false,
+      "open_issues": 0
+    }
+  ]
+}

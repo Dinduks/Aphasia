@@ -5,5 +5,10 @@ require './models/commit'
 require './models/repository'
 require './models/user'
 
-require './app/controller.rb'
+require 'net/https'
+require 'json'
+require './lib/github_client'
+require './lib/github_client_mock'
 require './lib/aphasia'
+
+require './app/controller'
