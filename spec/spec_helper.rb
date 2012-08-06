@@ -1,3 +1,5 @@
+require 'simplecov'
+SimpleCov.start
 require File.join(File.dirname(__FILE__), '..', 'aphasia.rb')
 
 RSpec.configure do |config|
