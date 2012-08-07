@@ -4,7 +4,7 @@ describe 'RepositoryConverter' do
   describe 'fill_object_from_legacy_hash' do
     before do
       http_client = GitHubClientMock.new
-      hash = http_client.call '/legacy_repos_search_dinduks'
+      hash = http_client.call '/legacy/repos/search/dinduks'
       @repository = RepositoryConverter.fill_object_from_legacy_hash hash['repositories'][0]
     end
 
