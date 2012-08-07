@@ -5,7 +5,13 @@ class Aphasia
 
   def find_repos(keyword)
     resp = @http_client.call("/legacy/repos/search/#{keyword}")
-    create_repos_array(resp['repositories'])
+
+    repositories_array = Array.new
+    resp['repositories'].each do |repository_hash|
+      repo = RepositoryConverter.fill_object_from_legacy_hash repository_hash
+      repositories_array.push(repo)
+    end
+    repositories_array
   end
 
   def find_user_repo(username)

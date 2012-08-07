@@ -10,6 +10,7 @@ require 'net/https'
 require 'json'
 require './lib/github_client'
 require './lib/github_client_mock'
+require './lib/converters/repository_converter.rb'
 require './lib/aphasia'
 
 require './app/controller'

@@ -20,9 +20,10 @@
       "url": "https://github.com/Dinduks/dinduks.github.com",
       "forks": 1,
       "language": "JavaScript",
-      "description": "",
+      "description": "My blog's source code and posts",
       "private": false,
-      "open_issues": 0
+      "open_issues": 0,
+      "homepage": "http://www.dinduks.com/"
     },
     {
       "type": "repo",
