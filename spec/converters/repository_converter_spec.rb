@@ -21,8 +21,7 @@ describe 'RepositoryConverter' do
       @repository.full_name.should      == 'Dinduks/dinduks.github.com'
       @repository.description.should    == 'My blog\'s source code and posts'
       @repository.homepage.should       == 'http://www.dinduks.com/'
-      @repository.languages.should be_an Array
-      @repository.languages.should include 'JavaScript'
+      @repository.language.should      == 'JavaScript'
       @repository.private.should be_false
       @repository.fork.should    be_false
       @repository.watchers.should       == 2
@@ -59,8 +58,7 @@ describe 'RepositoryConverter' do
       @repository.full_name.should   == 'Dinduks/furry-octo-ninja'
       @repository.description.should == 'This is the application I use to share my code snippets'
       @repository.homepage.should    == 'http://snippets.dinduks.com'
-      @repository.languages.should be_an Array
-      @repository.languages.should include 'Ruby'
+      @repository.language.should    == 'Ruby'
 
       @repository.private.should be_false
       @repository.fork.should    be_false

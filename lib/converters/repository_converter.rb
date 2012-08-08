@@ -11,7 +11,7 @@ class RepositoryConverter
     repo.full_name   = hash['owner'] + '/' + hash['name']
     repo.description = hash['description']
     repo.homepage    = hash['homepage']
-    repo.languages   = Array.new.push hash['language']
+    repo.language    = hash['language']
     repo.private     = hash['private'].to_s == 'false' ? false : true
     repo.fork        = hash['fork'].to_s == 'false' ? false : true
     repo.watchers    = hash['watchers']
@@ -41,7 +41,7 @@ class RepositoryConverter
     repo.full_name   = hash['full_name']
     repo.description = hash['description']
     repo.homepage    = hash['homepage']
-    repo.languages   = Array.new.push hash['language']
+    repo.language    = hash['language']
     repo.private     = hash['private'].to_s == 'false' ? false : true
     repo.fork        = hash['fork'].to_s    == 'false' ? false : true
     repo.forks       = hash['forks']
