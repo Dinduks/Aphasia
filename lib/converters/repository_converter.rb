@@ -49,8 +49,49 @@ class RepositoryConverter
     repo.size        = hash['size']
     repo.pushed_at   = DateTime.iso8601 hash['pushed_at']
     repo.created_at  = DateTime.iso8601 hash['created_at']
-    repo.updated_at  = DateTime.iso8601 hash['created_at']
+    repo.updated_at  = DateTime.iso8601 hash['updated_at']
 
     repo
+  end
+
+  def self.create_hash_from_object(repository)
+    hash = Hash.new
+
+    hash['owner'] = Hash.new
+    hash['owner']['login'] = repository.owner.login
+    hash['owner']['gravatar_id'] = repository.owner.gravatar_id
+    hash['owner']['url'] = repository.owner.url
+    hash['owner']['avatar_url'] = repository.owner.avatar_url
+    hash['owner']['id'] = repository.owner.id
+
+    hash['html_url']    = repository.html_url
+    hash['url']         = repository.url
+    hash['id']          = repository.id
+    hash['name']        = repository.name
+    hash['full_name']   = repository.full_name
+    hash['description'] = repository.description
+    hash['homepage']    = repository.homepage
+    hash['language']    = repository.language
+    hash['private']     = repository.private ? 'true' : 'false'
+    hash['fork']        = repository.fork    ? 'true' : 'false'
+    hash['forks']       = repository.forks
+    hash['watchers']    = repository.watchers
+    hash['size']        = repository.size
+    hash['pushed_at']   = repository.pushed_at.strftime('%Y-%m-%dT%H:%M:%SZ')
+    hash['created_at']  = repository.created_at.strftime('%Y-%m-%dT%H:%M:%SZ')
+    begin
+      hash['updated_at']  = repository.updated_at.strftime('%Y-%m-%dT%H:%M:%SZ')
+    rescue
+    end
+
+    hash
+  end
+
+  def self.create_hash_from_an_array_of_objects(array)
+    repositories = Array.new
+    array.each do |repository|
+      repositories.push(self.create_hash_from_object repository)
+    end
+    repositories
   end
 end
