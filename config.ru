@@ -1,0 +1,2 @@
+require './aphasia'
+run AphasiaApp
