@@ -16,7 +16,7 @@ class Aphasia
     raise UserNotFound.new(username) if resp['message'].to_s == 'Not Found' if resp.is_a? Hash
 
     create_repos_array(resp) do |hash|
-      Repository.new.fill_from_hash! hash
+      RepositoryConverter.fill_object_from_hash hash
     end
   end
 
