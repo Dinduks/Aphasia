@@ -8,8 +8,8 @@ require './models/user'
 
 require 'net/https'
 require 'json'
-require './lib/github_client'
-require './lib/github_client_mock'
+require './lib/http_clients/github_client'
+require './lib/http_clients/github_client_mock'
 require './lib/converters/repository_converter.rb'
 require './lib/aphasia'
 
