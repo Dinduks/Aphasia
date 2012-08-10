@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  $('.repository-input').focus();
-
   $('.timeline-commit a').popover({
     placement: get_popover_placement,
     title: 'Commit name',

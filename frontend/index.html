@@ -13,7 +13,10 @@
   <div id="container" ng-controller="AphasiaCtrl">
     <div class="hero-unit">
       <p>
-        <input type="text" class="repository-input" id="repository" placeholder="Start typing a GitHub repository name" value="" ng-model="repositoryName" ng-change="updateRepositoriesList()"/>
+        <input type="text" class="repository-input" id="repository"
+          placeholder="Start typing a GitHub repository name"
+          ng-model="repositoryName" ng-change="updateRepositoriesList()"
+          autofocus />
       </p>
     </div>
 
