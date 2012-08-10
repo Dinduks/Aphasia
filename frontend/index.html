@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="aphasia">
+<head>
+  <title>Aphasia</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/bootstrap-combined.min.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <script type="text/javascript" src="./js/angular-1.0.1.min.js"></script>
+  <script type="text/javascript" src="./js/angular-resource-1.0.1.min.js"></script>
+  <script type="text/javascript" src="./js/aphasia.js"></script>
+</head>
+<body>
+  <div id="container" ng-controller="AphasiaCtrl">
+    <div class="hero-unit">
+      <p>
+        <input type="text" class="repository-input" id="repository" placeholder="Start typing a GitHub repository name" value="" ng-model="repositoryName" ng-change="updateRepositoriesList()"/>
+      </p>
+    </div>
+
+    <div>
+      <div class="main-panel">
+        <ul class="repositories-list">
+          <li ng-repeat="repository in repositories">
+            <a href="#">{{repository.full_name}}</a></li>
+        </ul>
+      </div>
+
+    </div> <!-- container end -->
+  </div> <!-- body end -->
+
+  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap-tooltip.js"></script>
+  <script type="text/javascript" src="./js/bootstrap-popover.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
