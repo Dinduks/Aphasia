@@ -16,8 +16,11 @@ class RepositoryConverter
     repo.fork        = hash['fork'].to_s == 'false' ? false : true
     repo.watchers    = hash['watchers']
     repo.size        = hash['size']
-    repo.pushed_at   = DateTime.iso8601 hash['pushed_at']
-    repo.created_at  = DateTime.iso8601 hash['created_at']
+    begin
+      repo.pushed_at   = DateTime.iso8601 hash['pushed_at']
+      repo.created_at  = DateTime.iso8601 hash['created_at']
+    rescue
+    end
 
     repo
   end
@@ -77,9 +80,9 @@ class RepositoryConverter
     hash['forks']       = repository.forks
     hash['watchers']    = repository.watchers
     hash['size']        = repository.size
-    hash['pushed_at']   = repository.pushed_at.strftime('%Y-%m-%dT%H:%M:%SZ')
-    hash['created_at']  = repository.created_at.strftime('%Y-%m-%dT%H:%M:%SZ')
     begin
+      hash['pushed_at']   = repository.pushed_at.strftime('%Y-%m-%dT%H:%M:%SZ')
+      hash['created_at']  = repository.created_at.strftime('%Y-%m-%dT%H:%M:%SZ')
       hash['updated_at']  = repository.updated_at.strftime('%Y-%m-%dT%H:%M:%SZ')
     rescue
     end
