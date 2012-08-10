@@ -20,16 +20,52 @@
       </p>
     </div>
 
-    <div>
-      <div class="main-panel">
-        <ul class="repositories-list">
-          <li ng-repeat="repository in repositories">
-            <a href="#">{{repository.full_name}}</a></li>
-        </ul>
-      </div>
+    <div class="main-panel search-results">
+      <ul class="repositories-list">
+        <li ng-repeat="repository in repositories">
+          <a href="#{{repository.full_name}}" ng-click="showRepositoryInfo(repository.full_name)">{{repository.full_name}}</a></li>
+      </ul>
+    </div>
 
-    </div> <!-- container end -->
-  </div> <!-- body end -->
+    <div class="main-panel repository-info">
+      <header>
+      <h2>Dinduks/furry-octo-ninja</h2>
+      <a href="#" ng-click="showSearchResults()" class="return-repositories-list"><span class="icon-circle-arrow-left"></span>return to the repos' list</a>
+      </header>
+      <div class="contributors">
+        <h3>Contributors</h3>
+        <ul>
+          <li>
+            <a href="#"><span class="committer-name">DHH</span></a>
+            <span class="committer-score">(16 commits out of the last 100)</span>
+          </li>
+          <li>
+            <a href="#"<span class="committer-name">Dolan</span></a>
+          </li>
+          <li>
+            <a href="#"><span class="committer-name">Dinduks</span></a>
+            <span class="committer-score">(74 commits out of the last 100)</span>
+          </li>
+        </ul>
+      </div> <!-- contributors end -->
+
+      <div class="commits-timeline">
+        <h3>Commits timeline</h3>
+        <div class="timeline-container">
+          <div class="timeline">
+            &nbsp;
+            <div class="timeline-commit timeline-commit-1"><a href="#"></a></div>
+            <div class="timeline-commit timeline-commit-2"><a href="#"></a></div>
+            <div class="timeline-commit timeline-commit-3"><a href="#"></a></div>
+          </div>
+        </div>
+
+        <div class="contributions-info">
+        </div>
+      </div> <!-- commits-timeline end -->
+    </div>
+
+  </div> <!-- container end -->
 
   <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="./js/bootstrap-tooltip.js"></script>
