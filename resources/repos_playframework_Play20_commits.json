@@ -1,0 +1,1308 @@
+[
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/299a650dd6bda9a2042dab1e4e7ac9c51b8e6860",
+        "sha": "299a650dd6bda9a2042dab1e4e7ac9c51b8e6860"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "now onRequestCompletion is called on response sent or socket closing",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T14:09:54-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T14:09:54-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/2294e23acb2278f09fcd2de66a61ac03d786926d",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/9b39fa5ac8715ff18daa8e8163cc9961964c30e8",
+        "sha": "9b39fa5ac8715ff18daa8e8163cc9961964c30e8"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/2294e23acb2278f09fcd2de66a61ac03d786926d",
+    "sha": "2294e23acb2278f09fcd2de66a61ac03d786926d"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/30c3c034453f6195376bd74a8618cef460aa2907",
+        "sha": "30c3c034453f6195376bd74a8618cef460aa2907"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "now tests pass",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T02:45:11-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T02:45:11-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/299a650dd6bda9a2042dab1e4e7ac9c51b8e6860",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/ca4d90fb13b1f6cf7358e54a562acdc256b6b207",
+        "sha": "ca4d90fb13b1f6cf7358e54a562acdc256b6b207"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/299a650dd6bda9a2042dab1e4e7ac9c51b8e6860",
+    "sha": "299a650dd6bda9a2042dab1e4e7ac9c51b8e6860"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/3aced770263c1dcd5510ef79c9b6d8b7a6c5449c",
+        "sha": "3aced770263c1dcd5510ef79c9b6d8b7a6c5449c"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "fix last commit for unkown length body",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T02:27:38-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T02:27:38-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/30c3c034453f6195376bd74a8618cef460aa2907",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/5c35fba44ea0156df6b868f2c10c4c5583763eaa",
+        "sha": "5c35fba44ea0156df6b868f2c10c4c5583763eaa"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/30c3c034453f6195376bd74a8618cef460aa2907",
+    "sha": "30c3c034453f6195376bd74a8618cef460aa2907"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/170bcf6b69400652e93585a8e777f6b631fd2b8c",
+        "sha": "170bcf6b69400652e93585a8e777f6b631fd2b8c"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "refactorings for introducing onRequestCompletion in Global file",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T01:35:17-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-10T01:35:17-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/3aced770263c1dcd5510ef79c9b6d8b7a6c5449c",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/7ff0829d57abb83ce71fd91cb81ce1b6e6b539fb",
+        "sha": "7ff0829d57abb83ce71fd91cb81ce1b6e6b539fb"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/3aced770263c1dcd5510ef79c9b6d8b7a6c5449c",
+    "sha": "3aced770263c1dcd5510ef79c9b6d8b7a6c5449c"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/9996d321402af29e2b1cad4c1ae1c7c8085df1f3",
+        "sha": "9996d321402af29e2b1cad4c1ae1c7c8085df1f3"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "disable fork in Test for the time being",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-08T18:51:05-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-08T18:51:05-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/170bcf6b69400652e93585a8e777f6b631fd2b8c",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/c0cbd31747cb3dcd3c0a2f930bc3ef1d47462506",
+        "sha": "c0cbd31747cb3dcd3c0a2f930bc3ef1d47462506"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/170bcf6b69400652e93585a8e777f6b631fd2b8c",
+    "sha": "170bcf6b69400652e93585a8e777f6b631fd2b8c"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/991120a25748fe3f8a58a83001188a5e8e9e0daf",
+        "sha": "991120a25748fe3f8a58a83001188a5e8e9e0daf"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "some apis + core refactor for introducing the filter method",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-08T17:17:12-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-08T17:17:31-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/9996d321402af29e2b1cad4c1ae1c7c8085df1f3",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/0299817e0322aedfca034945e512ac22e56bb68a",
+        "sha": "0299817e0322aedfca034945e512ac22e56bb68a"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/9996d321402af29e2b1cad4c1ae1c7c8085df1f3",
+    "sha": "9996d321402af29e2b1cad4c1ae1c7c8085df1f3"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/882496e9caa5fa3adb2d09b0e995e653c23c6cd5",
+        "sha": "882496e9caa5fa3adb2d09b0e995e653c23c6cd5"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "upgrade sbt-idea to 1.1.0 final",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-08T06:43:32-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-08T06:43:32-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/991120a25748fe3f8a58a83001188a5e8e9e0daf",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/7faad4e330d524d6c971b26e9757ae34ac9694c3",
+        "sha": "7faad4e330d524d6c971b26e9757ae34ac9694c3"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/991120a25748fe3f8a58a83001188a5e8e9e0daf",
+    "sha": "991120a25748fe3f8a58a83001188a5e8e9e0daf"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/81623ec8866c27adacc37a10e7004704346908bf",
+        "sha": "81623ec8866c27adacc37a10e7004704346908bf"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "fix console reader issue after sbt 0.12 update",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-07T20:08:14-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-07T20:08:14-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/882496e9caa5fa3adb2d09b0e995e653c23c6cd5",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/1d69265e6a4056e22bfb293f64ced4bca9a820cc",
+        "sha": "1d69265e6a4056e22bfb293f64ced4bca9a820cc"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/882496e9caa5fa3adb2d09b0e995e653c23c6cd5",
+    "sha": "882496e9caa5fa3adb2d09b0e995e653c23c6cd5"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/d568139f7fb2359cbcdf24ec990567a876407b56",
+        "sha": "d568139f7fb2359cbcdf24ec990567a876407b56"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "fix Promise.system's visibility that was incorrectly changed to public during 0.12.0 upgrade",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-07T14:05:05-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-07T14:05:05-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/81623ec8866c27adacc37a10e7004704346908bf",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/7b7121f0b81718411e9df442e8a6423105317ddc",
+        "sha": "7b7121f0b81718411e9df442e8a6423105317ddc"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/81623ec8866c27adacc37a10e7004704346908bf",
+    "sha": "81623ec8866c27adacc37a10e7004704346908bf"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/ead15b9ca87b57e382e1bd387f2f4add4d9658e6",
+        "sha": "ead15b9ca87b57e382e1bd387f2f4add4d9658e6"
+      }
+    ],
+    "author": {
+      "login": "jamesward",
+      "avatar_url": "https://secure.gravatar.com/avatar/2a5d2e19906383b1a574f4d48d634d47?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/jamesward",
+      "gravatar_id": "2a5d2e19906383b1a574f4d48d634d47",
+      "id": 65043
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Add a Date header to 304 responses\n\nThis change adds a Date header to 304 responses and fixes an issue with CloudFront getting stuck in a RefreshHit cycle after hitting the TTL.\n\nMore information about why the Date header is required on 304 responses can be found at:\nhttp://stackoverflow.com/questions/1587667/should-http-304-not-modified-responses-contain-cache-control-headers\n\nAlso, since a Date header should always be returned (not just for requests that have a Last-Modified header) the Date header is now set when a 200 response is constructed.\n\nThe FunctionalSpec has been added to test for the Date header on a 304 response.",
+      "author": {
+        "email": "james@jamesward.org",
+        "name": "James Ward",
+        "date": "2012-08-07T11:38:22-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-07T13:44:24-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/d568139f7fb2359cbcdf24ec990567a876407b56",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/0f0ec5633099abfc726fb28f89782a228fe18475",
+        "sha": "0f0ec5633099abfc726fb28f89782a228fe18475"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/d568139f7fb2359cbcdf24ec990567a876407b56",
+    "sha": "d568139f7fb2359cbcdf24ec990567a876407b56"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/f01a253c533fac3810fbb15d5386d8b2f431a9a8",
+        "sha": "f01a253c533fac3810fbb15d5386d8b2f431a9a8"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "upgrading play to sbt 0.12.0\n\nAs the first step in our quest to move to scala 2.10, play is now upgraded  to sbt 0.12.0.\n\nThings to know:\n- play is on scala 2.9.2 now\n- sbt plugins were updated to 0.12.0 (sbt-idea will be updated to 1.1 final in a separate changeset)\n- tests are executed in fork by default (so no more permgen issues!)\n- forking has some minor overhead but not much\n- forking required adding some extra clean up tasks to test helpers (both java and scala) in order to avoid test hanging\n- Promise's actor system and WS' threads now can be cleaned up properly during test execution\n- forking can be turned off via the standard `fork in Test:=false` setting\n- if you experience hanging while running tests, make sure all your threads are shut down\n- resident compiler is still turned off due to issues with empty packages,\nthis feature will be enabled once we are on scala 2.10 M6 (with the fix for SI-5939)",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-07T13:24:01-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-07T13:43:36-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/ead15b9ca87b57e382e1bd387f2f4add4d9658e6",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/49f8bf1b11bee3739ad4625ff6aa736471ccd779",
+        "sha": "49f8bf1b11bee3739ad4625ff6aa736471ccd779"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/ead15b9ca87b57e382e1bd387f2f4add4d9658e6",
+    "sha": "ead15b9ca87b57e382e1bd387f2f4add4d9658e6"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/e3c2ffb0d4779863374c44c5ec1a588a1eca4474",
+        "sha": "e3c2ffb0d4779863374c44c5ec1a588a1eca4474"
+      },
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/aa005cbf4f51bdb94099dc5b37520bd69db33052",
+        "sha": "aa005cbf4f51bdb94099dc5b37520bd69db33052"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Merge pull request #385 from juretta/threads-with-context-classloader\n\nMake Threads.withContextClassLoader more resilient to failure",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "Peter Hausel",
+        "date": "2012-08-07T12:48:29-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "Peter Hausel",
+        "date": "2012-08-07T12:48:29-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/f01a253c533fac3810fbb15d5386d8b2f431a9a8",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/681f1514ddcb3ad328135baa032d3311fcc506a8",
+        "sha": "681f1514ddcb3ad328135baa032d3311fcc506a8"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/f01a253c533fac3810fbb15d5386d8b2f431a9a8",
+    "sha": "f01a253c533fac3810fbb15d5386d8b2f431a9a8"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/7d9b76f8044bf7a49fc152afc3965f9d35e234ae",
+        "sha": "7d9b76f8044bf7a49fc152afc3965f9d35e234ae"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 6,
+      "message": "adding optional require.js support\n\nhow to enable require.js support:\n- create a subfolder called `rjs`(can be overwritten via `requireSubFolder` setting) in app/assets/javascripts/\n- add require.js managed js files to this folder\n- add  `<script type=\"text/javascript\" data-main=\"public/javascripts/rjs/main\" src=\"@controllers.routes.Assets.at(\"javascripts/require.js\")\"></script>` to your template where data-main is the js file name in question\n\nthings to know:\n- require.js is bundled with play, so users do not need to add it manually\n- in dev mode dependencies resolved client side, closure compiler, without commonJS support, is run through the scripts for sanity check but no files are modified\n- in prod mode: stage, dist and start commands were changed to\nrun require.js' optimizer for each file in app/assets/javascripts/rjs this means files will be minified and combined for performance. Since the files (and references) will be the same (just optimized), no extra changes are necessary to switch between dev and prod mode\n- by default a rhino based optimizer is used, the native, node version can be configured for performance via `requireNativePath` setting\n- if app/assets/javascripts/rjs is missing, no extra processing takes place, so the default behavior will be used\n- right now this is enabled only for javascript but we are looking into using it for css as well",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-02T08:32:57-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-02T08:57:27-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/e3c2ffb0d4779863374c44c5ec1a588a1eca4474",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/4fc629db7895d5e3dba912b8b61049dde59db739",
+        "sha": "4fc629db7895d5e3dba912b8b61049dde59db739"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/e3c2ffb0d4779863374c44c5ec1a588a1eca4474",
+    "sha": "e3c2ffb0d4779863374c44c5ec1a588a1eca4474"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/02de93778f9a079b4a813f43fff1d06b5e9018bc",
+        "sha": "02de93778f9a079b4a813f43fff1d06b5e9018bc"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "fix scaladoc",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-02T08:31:54-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-08-02T08:57:27-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/7d9b76f8044bf7a49fc152afc3965f9d35e234ae",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/6cfefb07539a5fecc1fa7a752c4286fc155dcead",
+        "sha": "6cfefb07539a5fecc1fa7a752c4286fc155dcead"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/7d9b76f8044bf7a49fc152afc3965f9d35e234ae",
+    "sha": "7d9b76f8044bf7a49fc152afc3965f9d35e234ae"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/b028c18d7910fffaef3e2a16529a5ec2df2cd69e",
+        "sha": "b028c18d7910fffaef3e2a16529a5ec2df2cd69e"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "few fixes",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-01T21:48:39-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-01T21:48:39-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/02de93778f9a079b4a813f43fff1d06b5e9018bc",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/8ec604ea85369d1f8f641cfc162f2a4b6fe73411",
+        "sha": "8ec604ea85369d1f8f641cfc162f2a4b6fe73411"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/02de93778f9a079b4a813f43fff1d06b5e9018bc",
+    "sha": "02de93778f9a079b4a813f43fff1d06b5e9018bc"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/82fb6f472698cdba3178ebb2f67a2062aec9125b",
+        "sha": "82fb6f472698cdba3178ebb2f67a2062aec9125b"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "few fixes",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-01T15:04:07-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-08-01T15:04:20-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/b028c18d7910fffaef3e2a16529a5ec2df2cd69e",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/fe0648263fc2837f6c29718cb610f378d235f295",
+        "sha": "fe0648263fc2837f6c29718cb610f378d235f295"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/b028c18d7910fffaef3e2a16529a5ec2df2cd69e",
+    "sha": "b028c18d7910fffaef3e2a16529a5ec2df2cd69e"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/d924dac8eac85d66e171ad160e9b1f5a2cb13091",
+        "sha": "d924dac8eac85d66e171ad160e9b1f5a2cb13091"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Properly fixes the JNotify discovery (previous one was broken)",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-31T17:55:14-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-31T17:55:14-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/82fb6f472698cdba3178ebb2f67a2062aec9125b",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/a149d4e6003af56fae658012872eb3f4a48d2a37",
+        "sha": "a149d4e6003af56fae658012872eb3f4a48d2a37"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/82fb6f472698cdba3178ebb2f67a2062aec9125b",
+    "sha": "82fb6f472698cdba3178ebb2f67a2062aec9125b"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/9eaa1eedc785db2bf5c79fbadec5d7b3fb9494dc",
+        "sha": "9eaa1eedc785db2bf5c79fbadec5d7b3fb9494dc"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Fix discovery of the `jnotify` jar.",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-31T11:14:51-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-31T11:15:12-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/d924dac8eac85d66e171ad160e9b1f5a2cb13091",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/aad899c6c647a2820d6474490673d1d3e019bca7",
+        "sha": "aad899c6c647a2820d6474490673d1d3e019bca7"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/d924dac8eac85d66e171ad160e9b1f5a2cb13091",
+    "sha": "d924dac8eac85d66e171ad160e9b1f5a2cb13091"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/77b960b81e4e4720f4f184fe75fdb28548d12fb8",
+        "sha": "77b960b81e4e4720f4f184fe75fdb28548d12fb8"
+      },
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/266d71f1f666832e85cefba9cd28a640387a58ba",
+        "sha": "266d71f1f666832e85cefba9cd28a640387a58ba"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Merge pull request #398 from mchv/xpath\n\nImplement XPath lib with XPath standard API",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-31T09:44:40-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-31T09:44:40-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/9eaa1eedc785db2bf5c79fbadec5d7b3fb9494dc",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/66244e298d1679a30a4176b3238bd0a11f727a46",
+        "sha": "66244e298d1679a30a4176b3238bd0a11f727a46"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/9eaa1eedc785db2bf5c79fbadec5d7b3fb9494dc",
+    "sha": "9eaa1eedc785db2bf5c79fbadec5d7b3fb9494dc"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/77b960b81e4e4720f4f184fe75fdb28548d12fb8",
+        "sha": "77b960b81e4e4720f4f184fe75fdb28548d12fb8"
+      }
+    ],
+    "author": {
+      "login": "mchv",
+      "avatar_url": "https://secure.gravatar.com/avatar/32baeaffd9abf6aee0dee32a34ddac91?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/mchv",
+      "gravatar_id": "32baeaffd9abf6aee0dee32a34ddac91",
+      "id": 615085
+    },
+    "committer": {
+      "login": "mchv",
+      "avatar_url": "https://secure.gravatar.com/avatar/32baeaffd9abf6aee0dee32a34ddac91?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/mchv",
+      "gravatar_id": "32baeaffd9abf6aee0dee32a34ddac91",
+      "id": 615085
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Implement XPath lib with XPath standard API\n\nThis commit rewrites the XPath lib to use the standard API instead of\nJaxen.\nIt however introduces a small dependency to org.apache.ws.commons.util\nto have a simple implementation of NamespaceContext. We could avoid the\ndependency by copying their implementation.",
+      "author": {
+        "email": "mariot.chauvin@gmail.com",
+        "name": "Mariot Chauvin",
+        "date": "2012-07-31T03:11:16-07:00"
+      },
+      "committer": {
+        "email": "mariot.chauvin@gmail.com",
+        "name": "Mariot Chauvin",
+        "date": "2012-07-31T03:11:16-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/266d71f1f666832e85cefba9cd28a640387a58ba",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/66244e298d1679a30a4176b3238bd0a11f727a46",
+        "sha": "66244e298d1679a30a4176b3238bd0a11f727a46"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/266d71f1f666832e85cefba9cd28a640387a58ba",
+    "sha": "266d71f1f666832e85cefba9cd28a640387a58ba"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/b28b9b97ad198e6262a73b4c65a6c0f213764b00",
+        "sha": "b28b9b97ad198e6262a73b4c65a6c0f213764b00"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 2,
+      "message": "Remove the broken Jaxen dependency (still need to rewrite play.libs.XPath without using it)",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-30T14:46:32-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-30T14:47:11-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/77b960b81e4e4720f4f184fe75fdb28548d12fb8",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/fe6b84efc05ea43056de88eaf2ff7219b0553036",
+        "sha": "fe6b84efc05ea43056de88eaf2ff7219b0553036"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/77b960b81e4e4720f4f184fe75fdb28548d12fb8",
+    "sha": "77b960b81e4e4720f4f184fe75fdb28548d12fb8"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/3ff454e07337d254d6040ed0e81b5721041aece1",
+        "sha": "3ff454e07337d254d6040ed0e81b5721041aece1"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "some fixes",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-07-29T18:28:21-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-07-29T18:28:59-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/b28b9b97ad198e6262a73b4c65a6c0f213764b00",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/bb06960ae029e472ad460d0f01dbac96d51aa275",
+        "sha": "bb06960ae029e472ad460d0f01dbac96d51aa275"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/b28b9b97ad198e6262a73b4c65a6c0f213764b00",
+    "sha": "b28b9b97ad198e6262a73b4c65a6c0f213764b00"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/0778176592d857a6ae0f9fc4de225ac7238915da",
+        "sha": "0778176592d857a6ae0f9fc4de225ac7238915da"
+      },
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/c7c61abf48744c99605df7f802a3703ca77d6814",
+        "sha": "c7c61abf48744c99605df7f802a3703ca77d6814"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Merge pull request #347 from kevinbosman/lh-156-ebean-config\n\nAllow for overriding default Ebean startup config",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-24T09:59:01-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-24T09:59:01-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/3ff454e07337d254d6040ed0e81b5721041aece1",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/c0f02ff2ab779f65ecdbde30baac9d5ccb173859",
+        "sha": "c0f02ff2ab779f65ecdbde30baac9d5ccb173859"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/3ff454e07337d254d6040ed0e81b5721041aece1",
+    "sha": "3ff454e07337d254d6040ed0e81b5721041aece1"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/acc3abfbe942fd26da266452f033208a24f9111f",
+        "sha": "acc3abfbe942fd26da266452f033208a24f9111f"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 2,
+      "message": "Fix DynamicForm (fill, error, and view helpers should now work as expected)",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-23T17:35:59-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-23T17:36:39-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/0778176592d857a6ae0f9fc4de225ac7238915da",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/fb4629018819aebff66c2804e1170a6938f8ab8c",
+        "sha": "fb4629018819aebff66c2804e1170a6938f8ab8c"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/0778176592d857a6ae0f9fc4de225ac7238915da",
+    "sha": "0778176592d857a6ae0f9fc4de225ac7238915da"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/370dd316fd8c7a3b49e4a84dc00724d933038b0d",
+        "sha": "370dd316fd8c7a3b49e4a84dc00724d933038b0d"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Allow the WS library to be used outside of any running application.",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-23T14:49:31-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-23T17:36:39-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/acc3abfbe942fd26da266452f033208a24f9111f",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/c9e2279d7356b616413c6ebf2f44a7d3030c51b4",
+        "sha": "c9e2279d7356b616413c6ebf2f44a7d3030c51b4"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/acc3abfbe942fd26da266452f033208a24f9111f",
+    "sha": "acc3abfbe942fd26da266452f033208a24f9111f"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/7981c7a236973bfbeb47e35ca684db18ad010c78",
+        "sha": "7981c7a236973bfbeb47e35ca684db18ad010c78"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Be sure that logback is always configured.",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-23T14:49:12-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-23T17:36:39-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/370dd316fd8c7a3b49e4a84dc00724d933038b0d",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/247b12b1a5ffe01a12032e85684f224e2c57e6d0",
+        "sha": "247b12b1a5ffe01a12032e85684f224e2c57e6d0"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/370dd316fd8c7a3b49e4a84dc00724d933038b0d",
+    "sha": "370dd316fd8c7a3b49e4a84dc00724d933038b0d"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/237a173e97480ea36d99edab512193e0ee3ac903",
+        "sha": "237a173e97480ea36d99edab512193e0ee3ac903"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "updating scala futures",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-07-23T14:41:32-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-07-23T14:41:32-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/7981c7a236973bfbeb47e35ca684db18ad010c78",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/b6b41de8d3f4429e74e5bd2481e6a03730b48901",
+        "sha": "b6b41de8d3f4429e74e5bd2481e6a03730b48901"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/7981c7a236973bfbeb47e35ca684db18ad010c78",
+    "sha": "7981c7a236973bfbeb47e35ca684db18ad010c78"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/053dcce040318cc599ca4fca4047b023a976925c",
+        "sha": "053dcce040318cc599ca4fca4047b023a976925c"
+      }
+    ],
+    "author": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "committer": {
+      "login": "sadache",
+      "avatar_url": "https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/sadache",
+      "gravatar_id": "d349588ba91256515f7e2aa315e8cfae",
+      "id": 60507
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "some fixes, alsp renaming Result extractor to PlainResult",
+      "author": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-07-23T02:12:20-07:00"
+      },
+      "committer": {
+        "email": "github@sadekdrobi.com",
+        "name": "Sadek Drobi",
+        "date": "2012-07-23T02:12:39-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/237a173e97480ea36d99edab512193e0ee3ac903",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/6cba00d2fe24c344be9b1de6bc4e6b89afc5b154",
+        "sha": "6cba00d2fe24c344be9b1de6bc4e6b89afc5b154"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/237a173e97480ea36d99edab512193e0ee3ac903",
+    "sha": "237a173e97480ea36d99edab512193e0ee3ac903"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/12c3433fea166ee493c8b462014e4ab2c2305a4d",
+        "sha": "12c3433fea166ee493c8b462014e4ab2c2305a4d"
+      }
+    ],
+    "author": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "committer": {
+      "login": "guillaumebort",
+      "avatar_url": "https://secure.gravatar.com/avatar/adcd749d588278dbd255068c1d4b20d3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/guillaumebort",
+      "gravatar_id": "adcd749d588278dbd255068c1d4b20d3",
+      "id": 94658
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Rewritten the SBTLink stuff in pure Java - Step 1 to better Scala versions compatibility",
+      "author": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-20T16:47:07-07:00"
+      },
+      "committer": {
+        "email": "guillaume.bort@gmail.com",
+        "name": "Guillaume Bort",
+        "date": "2012-07-20T16:47:43-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/053dcce040318cc599ca4fca4047b023a976925c",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/47e7ed55d4da3238d2ef93223fd6acf5a9abbb8d",
+        "sha": "47e7ed55d4da3238d2ef93223fd6acf5a9abbb8d"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/053dcce040318cc599ca4fca4047b023a976925c",
+    "sha": "053dcce040318cc599ca4fca4047b023a976925c"
+  },
+  {
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/7d375aca364e2b83a4064cd4d097da1238b7e897",
+        "sha": "7d375aca364e2b83a4064cd4d097da1238b7e897"
+      },
+      {
+        "url": "https://api.github.com/repos/playframework/Play20/commits/acdb719622c5e1bed7061085d1f14d2d32489f68",
+        "sha": "acdb719622c5e1bed7061085d1f14d2d32489f68"
+      }
+    ],
+    "author": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "committer": {
+      "login": "pk11",
+      "avatar_url": "https://secure.gravatar.com/avatar/e98302802fb211bed73365b9ab809039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "url": "https://api.github.com/users/pk11",
+      "gravatar_id": "e98302802fb211bed73365b9ab809039",
+      "id": 126080
+    },
+    "commit": {
+      "comment_count": 0,
+      "message": "Merge branch 'master' of github.com:playframework/Play20",
+      "author": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-07-20T08:59:51-07:00"
+      },
+      "committer": {
+        "email": "peter_kovac11@hotmail.com",
+        "name": "peter hausel",
+        "date": "2012-07-20T08:59:51-07:00"
+      },
+      "url": "https://api.github.com/repos/playframework/Play20/git/commits/12c3433fea166ee493c8b462014e4ab2c2305a4d",
+      "tree": {
+        "url": "https://api.github.com/repos/playframework/Play20/git/trees/9447454ad5dab78cb6e10777eb6f8a475e763f60",
+        "sha": "9447454ad5dab78cb6e10777eb6f8a475e763f60"
+      }
+    },
+    "url": "https://api.github.com/repos/playframework/Play20/commits/12c3433fea166ee493c8b462014e4ab2c2305a4d",
+    "sha": "12c3433fea166ee493c8b462014e4ab2c2305a4d"
+  }
+]

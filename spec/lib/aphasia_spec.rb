@@ -32,4 +32,20 @@ describe 'Aphasia' do
       end.to raise_error UserNotFound
     end
   end
+
+  describe 'find_repo_commits' do
+    it 'should return an array of commits'do
+      commits = @aphasia.find_repo_commits 'playframework/Play20'
+      commits.should be_an Array
+      commits.to_a.should_not be_empty
+      commits.each { |commit| commit.should be_a Commit }
+    end
+
+    it 'should return an empty array if no commits were found'
+    it 'should raise an exception if the repo doesn\'t exist' do
+      expect do
+        commits = @aphasia.find_repo_commits 'arepothatdoesntexist'
+      end.to raise_error CommitNotFound
+    end
+  end
 end

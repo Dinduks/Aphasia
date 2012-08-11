@@ -20,7 +20,25 @@ class Aphasia
     end
   end
 
+  def find_repo_commits(repository_full_name)
+    resp = @http_client.call("/repos/#{repository_full_name}/commits")
+    raise CommitNotFound.new(repository_full_name) if resp['message'].to_s == 'Not Found' if resp.is_a? Hash
+
+    create_commits_array(resp) do |hash|
+      CommitConverter.fill_object_from_hash hash, repository_full_name
+    end
+  end
+
   private
+  def create_commits_array(commits)
+    commits_array = Array.new
+    commits.each do |commit_hash|
+      commit = yield commit_hash
+      commits_array.push(commit)
+    end
+    commits_array
+  end
+
   def create_repos_array(repositories)
     repositories_array = Array.new
     repositories.each do |repository_hash|
