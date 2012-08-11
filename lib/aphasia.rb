@@ -22,7 +22,15 @@ class Aphasia
 
   def find_repo_commits(repository_full_name)
     resp = @http_client.call("/repos/#{repository_full_name}/commits")
-    raise CommitNotFound.new(repository_full_name) if resp['message'].to_s == 'Not Found' if resp.is_a? Hash
+
+    if resp.is_a? Hash
+      message = resp['message'].to_s
+      if message == 'Not Found'
+        raise CommitNotFound.new(repository_full_name)
+      elsif message == 'Git Repository is empty.'
+        return []
+      end
+    end
 
     create_commits_array(resp) do |hash|
       CommitConverter.fill_object_from_hash hash, repository_full_name

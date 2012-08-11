@@ -41,7 +41,12 @@ describe 'Aphasia' do
       commits.each { |commit| commit.should be_a Commit }
     end
 
-    it 'should return an empty array if no commits were found'
+    it 'should return an empty array if no commits were found' do
+      commits = @aphasia.find_repo_commits 'emptyrepo'
+      commits.should be_an Array
+      commits.to_a.should be_empty
+    end
+
     it 'should raise an exception if the repo doesn\'t exist' do
       expect do
         commits = @aphasia.find_repo_commits 'arepothatdoesntexist'
