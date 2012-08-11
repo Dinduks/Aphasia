@@ -22,9 +22,7 @@ function AphasiaCtrl($scope, Repository, Commit) {
     $('.main-panel').fadeOut('slow');
 
     Repository.query({keyword: $scope.repositoryName}, function(repositories) {
-      if (repositories.length == 0) {
-        $scope.noRepositoryFound = true;
-      }
+      $scope.noRepositoryFound = (repositories.length == 0) ? true : false;
       $scope.repositories = repositories;
 
       loadingAnimation('hide');
@@ -33,11 +31,13 @@ function AphasiaCtrl($scope, Repository, Commit) {
   }
 
   $scope.showRepositoryInfo = function(repositoryFullName) {
+    $scope.repositoryTitle = repositoryFullName;
     hideSearchResults();
 
     var username = repositoryFullName.split('/')[0]
     var repo     = repositoryFullName.split('/')[1]
     Commit.query({username: username, repo: repo}, function(commits) {
+      $scope.noCommitFound = (commits.length == 0) ? true : false;
       $scope.parseRepositoryInfo(commits);
       $scope.totalCommits = commits.length;
     });
