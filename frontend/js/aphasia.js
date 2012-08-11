@@ -78,6 +78,7 @@ function displayRepositoryInfo() {
 
 function getContributors(commits) {
   var contributors = {};
+  var oneSingleCommitPercentage = Math.ceil(1 / commits.length * 100);
 
   for (var i=0; i < commits.length; i++) {
     var author = commits[i].author;
@@ -86,9 +87,11 @@ function getContributors(commits) {
         contributionsCounter: 1,
         avatar_url: author.avatar_url,
         url: author.url,
+        contributionsPercentage: oneSingleCommitPercentage,
       }
     } else {
       contributors[author.login].contributionsCounter++;
+      contributors[author.login].contributionsPercentage = Math.ceil(contributors[author.login].contributionsCounter / commits.length * 100);
     }
   }
 
