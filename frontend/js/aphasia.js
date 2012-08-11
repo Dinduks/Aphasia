@@ -28,7 +28,7 @@ function AphasiaCtrl($scope, Repository, Commit) {
       $scope.repositories = repositories;
 
       loadingAnimation('hide');
-      $scope.showSearchResults();
+      $scope.showSearchResults(true);
     });
   }
 
@@ -45,9 +45,10 @@ function AphasiaCtrl($scope, Repository, Commit) {
     displayRepositoryInfo();
   }
 
-  $scope.showSearchResults = function() {
+  $scope.showSearchResults = function(onSearch) {
     $('.search-results').fadeIn();
     $('.repository-info').slideUp();
+    if (onSearch) return;
     $('.repositories-list a').first().focus();
   }
 
