@@ -16,6 +16,13 @@ describe 'CommitConverter' do
       @commit.sha.should == '2294e23acb2278f09fcd2de66a61ac03d786926d'
       @commit.url.should == "https://github.com/playframework/Play20/commits/#{@commit.sha}"
       @commit.message.should == 'now onRequestCompletion is called on response sent or socket closing'
+      @commit.date.should be_a Date
+      @commit.date.day.should    == 10
+      @commit.date.month.should  == 8
+      @commit.date.year.should   == 2012
+      @commit.date.hour.should   == 14
+      @commit.date.minute.should == 9
+      @commit.date.sec.should    == 54
 
       @commit.author.should be_a User
       @commit.author.login.should       == 'sadache'

@@ -5,6 +5,7 @@ class CommitConverter
     commit.sha = hash['sha']
     commit.url = "https://github.com/#{repository_full_name}/commits/#{hash['sha']}"
     commit.message = hash['commit']['message']
+    commit.date    = DateTime.iso8601 hash['commit']['committer']['date']
 
     author = User.new
     author.login       = hash['author']['login']
