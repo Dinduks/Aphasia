@@ -23,7 +23,7 @@ function AphasiaCtrl($scope, Repository, Commit) {
 
     Repository.query({keyword: $scope.repositoryName}, function(repositories) {
       if (repositories.length == 0) {
-        repositories.push({ full_name: 'No repository called "' + $scope.repositoryName + '" were found' });
+        $scope.noRepositoryFound = true;
       }
       $scope.repositories = repositories;
 
