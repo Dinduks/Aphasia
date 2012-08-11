@@ -34,17 +34,10 @@
       </header>
       <div class="contributors">
         <h3>Contributors</h3>
-        <ul>
+        <ul ng-repeat="(name, contributor) in contributors">
           <li>
-            <a href="#"><span class="committer-name">DHH</span></a>
-            <span class="committer-score">(16 commits out of the last 100)</span>
-          </li>
-          <li>
-            <a href="#"<span class="committer-name">Dolan</span></a>
-          </li>
-          <li>
-            <a href="#"><span class="committer-name">Dinduks</span></a>
-            <span class="committer-score">(74 commits out of the last 100)</span>
+            <a href="{{contributor.url}}" _target="blank"><span class="committer-name">{{name}}</span></a>
+            <span class="committer-score">({{contributor.contributionsCounter}} commits out of the last {{totalCommits}})</span>
           </li>
         </ul>
       </div> <!-- contributors end -->
