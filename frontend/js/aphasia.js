@@ -29,7 +29,6 @@ function AphasiaCtrl($scope, Repository, Commit) {
 
       loadingAnimation('hide');
       $scope.showSearchResults();
-      setTimeout(function() {$('.repositories-list a').first().focus();}, 2500);
     });
   }
 
