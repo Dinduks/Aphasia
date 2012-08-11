@@ -25,4 +25,40 @@ class CommitConverter
 
     commit
   end
+
+  def self.create_hash_from_object(commit)
+    hash = Hash.new
+
+    hash['url'] = commit.url
+    hash['sha'] = commit.sha
+    hash['message'] = commit.message
+    begin
+      hash['date'] = commit.date.strftime('%Y-%m-%dT%H:%M:%SZ')
+    rescue
+    end
+
+    hash['author'] = Hash.new
+    hash['author']['login']       = commit.author.login
+    hash['author']['avatar_url']  = commit.author.avatar_url
+    hash['author']['url']         = commit.author.url
+    hash['author']['gravatar_id'] = commit.author.gravatar_id
+    hash['author']['id']          = commit.author.id
+
+    hash['committer'] = Hash.new
+    hash['committer']['login']       = commit.committer.login
+    hash['committer']['avatar_url']  = commit.committer.avatar_url
+    hash['committer']['url']         = commit.committer.url
+    hash['committer']['gravatar_id'] = commit.committer.gravatar_id
+    hash['committer']['id']          = commit.committer.id
+
+    hash
+  end
+
+  def self.create_hash_from_an_array_of_objects(array)
+    commits = Array.new
+    array.each do |commit|
+      commits.push(self.create_hash_from_object commit)
+    end
+    commits
+  end
 end

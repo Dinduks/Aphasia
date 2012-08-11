@@ -8,10 +8,20 @@ class AphasiaApp < Sinatra::Application
 
   get '/repos/:keyword' do
     repositories = @aphasia.find_repos(params['keyword'])
-    repositories_array = RepositoryConverter.create_hash_from_an_array_of_objects(repositories)
+    repositories_array = RepositoryConverter.create_hash_from_an_array_of_objects repositories
     JSON.pretty_generate repositories_array
   end
 
   options '/repos/:keyword' do
+  end
+
+  get '/repo/:username/:repo/commits' do
+    repository_full_name = params['username'] + '/' + params['repo']
+    commits = @aphasia.find_repo_commits repository_full_name
+    commits_array = CommitConverter.create_hash_from_an_array_of_objects commits
+    JSON.pretty_generate commits_array
+  end
+
+  options '/repo/:username/:repo/commits' do
   end
 end

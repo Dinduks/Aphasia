@@ -39,4 +39,41 @@ describe 'CommitConverter' do
       @commit.committer.id.should          == 60507
     end
   end
+
+  describe 'create_hash_from_object' do
+    it 'should return a correct json string' do
+      sample_object_hash = JSON.parse(File.open(File.dirname(__FILE__) + '/../resources/sample_commit.json').read)
+      commit = CommitConverter.fill_object_from_hash sample_object_hash, 'playframework/Play20'
+
+      hash = CommitConverter.create_hash_from_object commit
+
+      hash['url'].should     == "https://github.com/playframework/Play20/commits/#{commit.sha}"
+      hash['sha'].should     == '2294e23acb2278f09fcd2de66a61ac03d786926d'
+      hash['message'].should == 'now onRequestCompletion is called on response sent or socket closing'
+      hash['date'].should    == '2012-08-10T14:09:54Z'
+
+      hash['author']['login']       == 'sadache'
+      hash['author']['avatar_url']  == 'https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png'
+      hash['author']['url']         == "https://github.com/#{commit.author.login}"
+      hash['author']['gravatar_id'] == 'd349588ba91256515f7e2aa315e8cfae'
+      hash['author']['id']          == 60507
+
+      hash['committer']['login']       == 'sadache'
+      hash['committer']['avatar_url']  == 'https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png'
+      hash['committer']['url']         == "https://github.com/#{commit.committer.login}"
+      hash['committer']['gravatar_id'] == 'd349588ba91256515f7e2aa315e8cfae'
+      hash['committer']['id']          == 60507
+    end
+  end
+
+  describe 'create_hash_from_an_array_of_objects' do
+    it 'should return an array of commits' do
+      sample_object_hash = JSON.parse(File.open(File.dirname(__FILE__) + '/../resources/sample_commit.json').read)
+      commit = CommitConverter.fill_object_from_hash sample_object_hash, 'playframework/Play20'
+
+      commits = [commit, commit]
+      commits_array = CommitConverter.create_hash_from_an_array_of_objects commits
+      commits_array.should be_an Array
+    end
+  end
 end
