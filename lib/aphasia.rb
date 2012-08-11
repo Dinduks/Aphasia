@@ -11,7 +11,7 @@ class Aphasia
     end
   end
 
-  def find_user_repo(username)
+  def find_user_repos(username)
     resp = @http_client.call("/users/#{username}/repos")
     raise UserNotFound.new(username) if resp['message'].to_s == 'Not Found' if resp.is_a? Hash
 
