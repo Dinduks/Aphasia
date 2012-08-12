@@ -135,10 +135,21 @@ function createCommitPopovers(timeline) {
 
   for (index in timeline) {
     commit = timeline[index];
+
     $('.timeline-commit-' + i + ' a').popover({
       placement: get_popover_placement,
-      trigger: 'hover',
+      title: getShortCommitMessage(commit.message),
+      trigger: 'manual',
     });
+
+    $('.timeline-commit-' + i + ' a').click(function() {
+      $('.timeline-commit a').popover('hide');
+      $(this).popover('show');
+      return false;
+    });
+
+    $('html').click(function() { $('.timeline-commit a').popover('hide'); });
+
     i++;
   }
 }
@@ -152,5 +163,18 @@ function get_popover_placement(pop, dom_el) {
   var left_pos = $(dom_el).offset().left;
   if (width - left_pos > 400) return 'right';
   return 'left';
+}
+
+function getShortCommitMessage(message) {
+  var shortMessage;
+
+  if (/Merge pull request/.test(message)) {
+    shortMessage = 'Merge PR: '
+    shortMessage += message.split("\n\n")[1];
+  } else {
+    shortMessage = message.split("\n")[0];
+  }
+
+  return shortMessage;
 }
 
