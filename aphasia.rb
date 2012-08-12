@@ -1,4 +1,3 @@
-require 'sinatra/reloader'
 require 'bundler'
 Bundler.require
 
