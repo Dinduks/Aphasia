@@ -43,6 +43,13 @@ function AphasiaCtrl($scope, Repository, Commit) {
     repo     = repositoryFullName.split('/')[1]
     Commit.query({username: username, repo: repo}, function(commits) {
       $scope.noCommitFound = (commits.length == 0) ? true : false;
+
+      if ($scope.noCommitFound) {
+        displayRepositoryInfo();
+        loadingAnimation('hide');
+        return;
+      }
+
       $scope.parseRepositoryInfo(commits);
       $scope.totalCommits = commits.length;
       timeline = getTimeline(commits);
