@@ -103,6 +103,7 @@ body {
 
 .repository-info .container {
   margin-top: 1em;
+  width: 100%;
 }
 
 .repository-info .container h3 {
