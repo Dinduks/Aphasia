@@ -31,15 +31,22 @@ function AphasiaCtrl($scope, Repository, Commit) {
   }
 
   $scope.showRepositoryInfo = function(repositoryFullName) {
+    var timeline,
+        username,
+        repo;
+
     $scope.repositoryTitle = repositoryFullName;
     hideSearchResults();
 
-    var username = repositoryFullName.split('/')[0]
-    var repo     = repositoryFullName.split('/')[1]
+    username = repositoryFullName.split('/')[0]
+    repo     = repositoryFullName.split('/')[1]
     Commit.query({username: username, repo: repo}, function(commits) {
       $scope.noCommitFound = (commits.length == 0) ? true : false;
       $scope.parseRepositoryInfo(commits);
       $scope.totalCommits = commits.length;
+      timeline = getTimeline(commits);
+      $scope.timeline = timeline;
+      setTimeout(function() {createCommitPopovers(timeline)}, 1000);
     });
 
     displayRepositoryInfo();
@@ -96,5 +103,54 @@ function getContributors(commits) {
   }
 
   return contributors;
+}
+
+function getTimeline(commits) {
+  var oldestCommitTimestamp,
+      newestCommitTimestamp,
+      timestampsDifference,
+      timeline = {},
+      commit,
+      percentage,
+      i;
+
+  oldestCommitTimestamp = new Date(commits[commits.length - 1].date).getTime() / 1000;
+  newestCommitTimestamp = new Date(commits[0].date).getTime() / 1000;
+  timestampsDifference  = newestCommitTimestamp - oldestCommitTimestamp;
+
+  for (i=commits.length - 1; i > 0; i--) {
+    commit = commits[i];
+    percentage = (((new Date(commit.date).getTime() / 1000) - oldestCommitTimestamp) / timestampsDifference * 100);
+    timeline[percentage] = commit;
+  }
+
+  return timeline;
+}
+
+function createCommitPopovers(timeline) {
+  var i = 0,
+      milestone,
+      index,
+      commit;
+
+  for (index in timeline) {
+    commit = timeline[index];
+    $('.timeline-commit-' + i + ' a').popover({
+      placement: get_popover_placement,
+      trigger: 'hover',
+    });
+    i++;
+  }
+}
+
+/**
+ * Source: http://stackoverflow.com/a/9261887/604041
+ */
+function get_popover_placement(pop, dom_el) {
+  var width = window.innerWidth;
+  if (width<500) return 'bottom';
+  var left_pos = $(dom_el).offset().left;
+  if (width - left_pos > 400) return 'right';
+  return 'left';
 }
 

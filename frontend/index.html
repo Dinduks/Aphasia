@@ -5,9 +5,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./css/bootstrap-combined.min.css" />
   <link rel="stylesheet" href="./css/main.css" />
-  <script type="text/javascript" src="./js/angular-1.0.1.min.js"></script>
-  <script type="text/javascript" src="./js/angular-resource-1.0.1.min.js"></script>
-  <script type="text/javascript" src="./js/aphasia.js"></script>
 </head>
 <body>
   <div id="container" ng-controller="AphasiaCtrl">
@@ -56,10 +53,13 @@
           <h3>Commits timeline</h3>
           <div class="timeline-container">
             <div class="timeline">
-              &nbsp;
-              <div class="timeline-commit timeline-commit-1"><a href="#"></a></div>
-              <div class="timeline-commit timeline-commit-2"><a href="#"></a></div>
-              <div class="timeline-commit timeline-commit-3"><a href="#"></a></div>
+              <div class="timeline-commit timeline-commit-{{$index}} {{percentage}}"
+                style="left: {{percentage}}%;"
+                ng-repeat="(percentage, commit) in timeline">
+                <a href="#" data-content="
+                  content
+                  "></a>
+              </div>
             </div>
           </div>
 
@@ -67,7 +67,6 @@
           </div>
         </div> <!-- commits-timeline end -->
       </div>
-
     </div>
 
   </div> <!-- container end -->
@@ -75,6 +74,9 @@
   <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="./js/bootstrap-tooltip.js"></script>
   <script type="text/javascript" src="./js/bootstrap-popover.js"></script>
+  <script type="text/javascript" src="./js/angular-1.0.1.min.js"></script>
+  <script type="text/javascript" src="./js/angular-resource-1.0.1.min.js"></script>
+  <script type="text/javascript" src="./js/aphasia.js"></script>
   <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
