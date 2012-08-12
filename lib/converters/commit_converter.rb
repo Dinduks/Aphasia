@@ -7,21 +7,23 @@ class CommitConverter
     commit.message = hash['commit']['message']
     commit.date    = DateTime.iso8601 hash['commit']['committer']['date']
 
-    author = User.new
-    author.login       = hash['author']['login']
-    author.avatar_url  = hash['author']['avatar_url']
-    author.gravatar_id = hash['author']['gravatar_id']
-    author.id          = hash['author']['id']
-    author.url         = "https://github.com/#{author.login}"
-    commit.author      = author
+    commit.author = User.new
+    if hash['author']
+      commit.author.login       = hash['author']['login']
+      commit.author.avatar_url  = hash['author']['avatar_url']
+      commit.author.gravatar_id = hash['author']['gravatar_id']
+      commit.author.id          = hash['author']['id']
+      commit.author.url         = "https://github.com/#{commit.author.login}"
+    end
 
-    committer = User.new
-    committer.login       = hash['committer']['login']
-    committer.avatar_url  = hash['committer']['avatar_url']
-    committer.gravatar_id = hash['committer']['gravatar_id']
-    committer.id          = hash['committer']['id']
-    committer.url         = "https://github.com/#{committer.login}"
-    commit.committer      = committer
+    commit.committer = User.new
+    if hash['committer']
+      commit.committer.login       = hash['committer']['login']
+      commit.committer.avatar_url  = hash['committer']['avatar_url']
+      commit.committer.gravatar_id = hash['committer']['gravatar_id']
+      commit.committer.id          = hash['committer']['id']
+      commit.committer.url         = "https://github.com/#{commit.committer.login}"
+    end
 
     commit
   end
