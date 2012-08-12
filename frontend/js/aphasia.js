@@ -37,6 +37,7 @@ function AphasiaCtrl($scope, Repository, Commit) {
 
     $scope.repositoryTitle = repositoryFullName;
     hideSearchResults();
+    loadingAnimation('show');
 
     username = repositoryFullName.split('/')[0]
     repo     = repositoryFullName.split('/')[1]
@@ -47,9 +48,9 @@ function AphasiaCtrl($scope, Repository, Commit) {
       timeline = getTimeline(commits);
       $scope.timeline = timeline;
       setTimeout(function() {createCommitPopovers(timeline)}, 1000);
+      loadingAnimation('hide');
+      displayRepositoryInfo();
     });
-
-    displayRepositoryInfo();
   }
 
   $scope.showSearchResults = function(onSearch) {
