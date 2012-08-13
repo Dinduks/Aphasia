@@ -33,8 +33,11 @@ function searchCtrl($scope, $routeParams) {
   $scope.$emit('directSearchEvent', { repositoryName: repositoryName });
 }
 
-function repoInfoCtrl($scope) {
+function repoInfoCtrl($scope, $routeParams, Commit) {
+  var repositoryFullName;
 
+  repositoryFullName = $routeParams.username + '/' + $routeParams.repositoryName;
+  showRepositoryInfo($scope, Commit, repositoryFullName);
 }
 
 function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
@@ -57,37 +60,7 @@ function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
   }
 
   $scope.showRepositoryInfo = function(repositoryFullName) {
-    var timeline,
-        username,
-        repository;
-
-    $scope.repositoryTitle = repositoryFullName;
-    hideSearchResults();
-    loadingAnimation('show');
-
-    username   = repositoryFullName.split('/')[0]
-    repository = repositoryFullName.split('/')[1]
-    Commit.query({username: username, repo: repository}, function(commits) {
-      // This boolean is used to show or hide the
-      // "this repo has no commits" message
-      $scope.noCommitFound = (commits.length == 0) ? true : false;
-
-      if ($scope.noCommitFound) {
-        displayRepositoryInfo();
-        loadingAnimation('hide');
-        return;
-      }
-
-      $scope.parseRepositoryInfo(commits);
-      $scope.totalCommits = commits.length;
-
-      timeline = getTimeline(commits);
-      $scope.timeline = timeline;
-      setTimeout(function() {createCommitPopovers(timeline)}, 1000);
-
-      loadingAnimation('hide');
-      displayRepositoryInfo();
-    });
+    showRepositoryInfo($scope, Commit, repositoryFullName);
   }
 
   $scope.showSearchResults = function(onSearch) {
@@ -236,6 +209,40 @@ function updateRepositoriesList($scope, Repository) {
 
       loadingAnimation('hide');
       $scope.showSearchResults(true);
+    });
+}
+
+function showRepositoryInfo($scope, Commit, repositoryFullName) {
+    var timeline,
+        username,
+        repository;
+
+    $scope.repositoryTitle = repositoryFullName;
+    hideSearchResults();
+    loadingAnimation('show');
+
+    username   = repositoryFullName.split('/')[0]
+    repository = repositoryFullName.split('/')[1]
+    Commit.query({username: username, repo: repository}, function(commits) {
+      // This boolean is used to show or hide the
+      // "this repo has no commits" message
+      $scope.noCommitFound = (commits.length == 0) ? true : false;
+
+      if ($scope.noCommitFound) {
+        displayRepositoryInfo();
+        loadingAnimation('hide');
+        return;
+      }
+
+      $scope.parseRepositoryInfo(commits);
+      $scope.totalCommits = commits.length;
+
+      timeline = getTimeline(commits);
+      $scope.timeline = timeline;
+      setTimeout(function() {createCommitPopovers(timeline)}, 1000);
+
+      loadingAnimation('hide');
+      displayRepositoryInfo();
     });
 }
 
