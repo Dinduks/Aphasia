@@ -26,11 +26,11 @@ module.factory('Commit', function($resource) {
 });
 
 function searchCtrl($scope, $routeParams) {
-  var repositoryName;
+  var keyword;
 
-  repositoryName = $routeParams.keyword;
+  keyword = $routeParams.keyword;
   // Fire an event along with sharing the repository name that comes form the URL
-  $scope.$emit('directSearchEvent', { repositoryName: repositoryName });
+  $scope.$emit('directSearchEvent', { keyword: keyword });
 }
 
 function repoInfoCtrl($scope, $routeParams, Commit) {
@@ -43,7 +43,10 @@ function repoInfoCtrl($scope, $routeParams, Commit) {
 function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
   // Expect the event fired when searching from the URL
   $scope.$on('directSearchEvent', function(event, args) {
-    $scope.repositoryName = args.repositoryName;
+    $scope.repositoryName = args.keyword;
+
+    loadingAnimation('show');
+    $('.main-panel').fadeOut('slow');
     updateRepositoriesList($scope, Repository);
 
     // Automatically focus the first list element
@@ -198,18 +201,23 @@ function getShortCommitMessage(message) {
 }
 
 function updateRepositoriesList($scope, Repository) {
-    loadingAnimation('show');
-    $('.main-panel').fadeOut('slow');
+    setTimeout(function() {
+        if ((new Date()).getTime() - $.lastRepositoryKeywordUpdate > 500) {
+            Repository.query({keyword: $scope.repositoryName}, function(repositories) {
+                loadingAnimation('show');
+                $('.main-panel').fadeOut('slow');
+                // This boolean is used to show or hide the
+                // "no repo called ... was found" message
+                $scope.noRepositoryFound = (repositories.length == 0) ? true : false;
+                $scope.repositories = repositories;
 
-    Repository.query({keyword: $scope.repositoryName}, function(repositories) {
-      // This boolean is used to show or hide the
-      // "no repo called ... was found" message
-      $scope.noRepositoryFound = (repositories.length == 0) ? true : false;
-      $scope.repositories = repositories;
+                loadingAnimation('hide');
+                $scope.showSearchResults(true);
+            });
+        }
+    }, 500);
 
-      loadingAnimation('hide');
-      $scope.showSearchResults(true);
-    });
+    $.lastRepositoryKeywordUpdate = (new Date()).getTime();
 }
 
 function showRepositoryInfo($scope, Commit, repositoryFullName) {
