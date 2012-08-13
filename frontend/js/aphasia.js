@@ -29,6 +29,7 @@ function searchCtrl($scope, $routeParams) {
   var repositoryName;
 
   repositoryName = $routeParams.keyword;
+  // Fire an event along with sharing the repository name that comes form the URL
   $scope.$emit('directSearchEvent', { repositoryName: repositoryName });
 }
 
@@ -37,6 +38,7 @@ function repoInfoCtrl($scope) {
 }
 
 function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
+  // Expect the event fired when searching from the URL
   $scope.$on('directSearchEvent', function(event, args) {
     $scope.repositoryName = args.repositoryName;
     updateRepositoriesList($scope, Repository);
@@ -49,6 +51,7 @@ function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
   });
 
   $scope.updateRepositoriesList = function() {
+    // Update the URL whenever the repository name is changed
     $location.url('/search/' + $scope.repositoryName);
     updateRepositoriesList($scope, Repository);
   }
@@ -56,15 +59,17 @@ function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
   $scope.showRepositoryInfo = function(repositoryFullName) {
     var timeline,
         username,
-        repo;
+        repository;
 
     $scope.repositoryTitle = repositoryFullName;
     hideSearchResults();
     loadingAnimation('show');
 
-    username = repositoryFullName.split('/')[0]
-    repo     = repositoryFullName.split('/')[1]
-    Commit.query({username: username, repo: repo}, function(commits) {
+    username   = repositoryFullName.split('/')[0]
+    repository = repositoryFullName.split('/')[1]
+    Commit.query({username: username, repo: repository}, function(commits) {
+      // This boolean is used to show or hide the
+      // "this repo has no commits" message
       $scope.noCommitFound = (commits.length == 0) ? true : false;
 
       if ($scope.noCommitFound) {
@@ -75,9 +80,11 @@ function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
 
       $scope.parseRepositoryInfo(commits);
       $scope.totalCommits = commits.length;
+
       timeline = getTimeline(commits);
       $scope.timeline = timeline;
       setTimeout(function() {createCommitPopovers(timeline)}, 1000);
+
       loadingAnimation('hide');
       displayRepositoryInfo();
     });
@@ -86,16 +93,21 @@ function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
   $scope.showSearchResults = function(onSearch) {
     $('.search-results').fadeIn();
     $('.repository-info').slideUp();
+    // Don't change the focus to the repos list
+    // if the user's focus is on the search field
     if (onSearch) return;
     $('.repositories-list a').first().focus();
   }
 
   $scope.parseRepositoryInfo = function(commits) {
-    var contributors = getContributors(commits);
+    var contributors;
+
+    contributors = getContributors(commits);
     $scope.contributors = contributors;
   }
 }
 
+// Show or hide the loading gif
 function loadingAnimation(action) {
   if (action == 'hide')
     $('.repository-input').css('background-image', 'none');
@@ -115,27 +127,29 @@ function displayRepositoryInfo() {
 }
 
 function getContributors(commits) {
-  var contributors = {};
-  var oneSingleCommitPercentage = Math.ceil(1 / commits.length * 100);
+  var contributors = {},
+      oneSingleCommitPercentage = Math.ceil(1 / commits.length * 100),
+      committer;
 
   for (var i=0; i < commits.length; i++) {
-    var author = commits[i].author;
-    if (!contributors[author.login]) {
-      contributors[author.login] = {
-        contributionsCounter: 1,
-        avatar_url: author.avatar_url,
-        url: author.url,
-        contributionsPercentage: oneSingleCommitPercentage,
+    committer = commits[i].author;
+    if (!contributors[committer.login]) {
+      contributors[committer.login] = {
+        contributionsCounter:     1,
+        avatar_url:               committer.avatar_url,
+        url:                      committer.url,
+        contributionsPercentage:  oneSingleCommitPercentage,
       }
     } else {
-      contributors[author.login].contributionsCounter++;
-      contributors[author.login].contributionsPercentage = Math.ceil(contributors[author.login].contributionsCounter / commits.length * 100);
+      contributors[committer.login].contributionsCounter++;
+      contributors[committer.login].contributionsPercentage = Math.ceil(contributors[committer.login].contributionsCounter / commits.length * 100);
     }
   }
 
   return contributors;
 }
 
+// Create the timeline as it should be displayed
 function getTimeline(commits) {
   var oldestCommitTimestamp,
       newestCommitTimestamp,
@@ -168,9 +182,9 @@ function createCommitPopovers(timeline) {
     commit = timeline[index];
 
     $('.timeline-commit-' + i + ' a').popover({
-      placement: get_popover_placement,
-      title: getShortCommitMessage(commit.message),
-      trigger: 'manual',
+      placement:  get_popover_placement,
+      title:      getShortCommitMessage(commit.message),
+      trigger:    'manual',
     });
 
     $('.timeline-commit-' + i + ' a').click(function() {
@@ -200,6 +214,7 @@ function getShortCommitMessage(message) {
   var shortMessage;
 
   if (/Merge pull request/.test(message)) {
+    // If the commit is a PR merge, display the commit message only
     shortMessage = 'Merge PR: '
     shortMessage += message.split("\n\n")[1];
   } else {
@@ -214,6 +229,8 @@ function updateRepositoriesList($scope, Repository) {
     $('.main-panel').fadeOut('slow');
 
     Repository.query({keyword: $scope.repositoryName}, function(repositories) {
+      // This boolean is used to show or hide the
+      // "no repo called ... was found" message
       $scope.noRepositoryFound = (repositories.length == 0) ? true : false;
       $scope.repositories = repositories;
 

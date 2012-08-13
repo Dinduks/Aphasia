@@ -29,7 +29,7 @@
           <div class="timeline-commit timeline-commit-{{$index}} {{percentage}}"
             style="left: {{percentage}}%;"
             ng-repeat="(percentage, commit) in timeline">
-            <a href="#" data-content="
+            <a href="" data-content="
               By: <a href='https://github.com/{{commit.committer.login}}' target='_blank'>{{commit.committer.login}}</a><br />
               Date: {{commit.date|date:'MM/dd/yyyy @ h:mma'}}<br />
               <div class='contributor-picture'>
