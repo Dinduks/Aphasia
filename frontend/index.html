@@ -16,66 +16,7 @@
           autofocus />
       </p>
     </div>
-
-    <div class="main-panel search-results">
-      <ul class="repositories-list">
-        <li ng-show="noRepositoryFound" ng-hide="!noRepositoryFound">No repository called <em>{{repositoryName}}</em> was found.</li>
-        <li ng-repeat="repository in repositories">
-          <a href="#{{repository.full_name}}" ng-click="showRepositoryInfo(repository.full_name)">{{repository.full_name}}</a></li>
-      </ul>
-    </div>
-
-    <div class="main-panel repository-info">
-      <header>
-      <h2>{{repositoryTitle}}</h2>
-      <a href="#" ng-click="showSearchResults()" class="return-repositories-list"><span class="icon-circle-arrow-left"></span>return to the repos' list</a>
-      </header>
-
-      <p ng-show="noCommitFound" ng-hide="!noCommitFound">This repository has no commit.</p>
-
-      <div ng-show="!noCommitFound" ng-hide="noCommitFound" class="container">
-        <div class="contributors">
-          <h3>Contributors</h3>
-          <ul ng-repeat="(name, contributor) in contributors">
-            <li>
-              <a href="{{contributor.url}}" target="_blank"><span class="committer-name">{{name}}</span></a>
-              <span class="committer-score">
-                - {{contributor.contributionsCounter}}
-                <ng-pluralize count="contributor.contributionsCounter" when="{'one': 'commit', 'other': 'commits'}"></ng-pluralize>
-                out of the last {{totalCommits}}
-                ({{contributor.contributionsPercentage}}%)
-              </span>
-            </li>
-          </ul>
-        </div> <!-- contributors end -->
-
-        <div class="commits-timeline">
-          <h3>Commits timeline</h3>
-          <div class="timeline-container">
-            <div class="timeline">
-              <div class="timeline-commit timeline-commit-{{$index}} {{percentage}}"
-                style="left: {{percentage}}%;"
-                ng-repeat="(percentage, commit) in timeline">
-                <a href="#" data-content="
-                  By: <a href='https://github.com/{{commit.committer.login}}' target='_blank'>{{commit.committer.login}}</a><br />
-                  Date: {{commit.date|date:'MM/dd/yyyy @ h:mma'}}<br />
-                  <div class='contributor-picture'>
-                    <a href='https://github.com/{{commit.committer.login}}' target='_blank'>
-                      <img src='https://secure.gravatar.com/avatar/{{commit.committer.gravatar_id}}?s=40' alt='{{commit.committer.login}}' />
-                    </a>
-                  </div>
-                  More info on <a href='{{commit.url}}' target='_blank'>GitHub</a>
-                  "></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="contributions-info">
-          </div>
-        </div> <!-- commits-timeline end -->
-      </div>
-    </div>
-
+    <ng-view></ng-view>
   </div> <!-- container end -->
 
   <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>

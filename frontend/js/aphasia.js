@@ -1,6 +1,15 @@
 "use strict";
 
-var module = angular.module('aphasia', ['ngResource']);
+var module = angular.module('aphasia', ['ngResource'], function($routeProvider) {
+  $routeProvider.when('/search/:keyword', {
+    controller: searchCtrl,
+    templateUrl: 'partials/search.html',
+  });
+  $routeProvider.when('/:username/:repositoryName', {
+    controller: repoInfoCtrl,
+    templateUrl: 'partials/repo_info.html',
+  });
+});
 
 // This object will handle the Ajax API calls concerning the repos
 module.factory('Repository', function($resource) {
@@ -16,18 +25,32 @@ module.factory('Commit', function($resource) {
   });
 });
 
-function AphasiaCtrl($scope, Repository, Commit) {
+function searchCtrl($scope, $routeParams) {
+  var repositoryName;
+
+  repositoryName = $routeParams.keyword;
+  $scope.$emit('directSearchEvent', { repositoryName: repositoryName });
+}
+
+function repoInfoCtrl($scope) {
+
+}
+
+function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
+  $scope.$on('directSearchEvent', function(event, args) {
+    $scope.repositoryName = args.repositoryName;
+    updateRepositoriesList($scope, Repository);
+
+    // Automatically focus the first list element
+    // if the user isn't typing
+    if (!$.isTyping) {
+      setTimeout(function() {$('.repositories-list a').first().focus()}, 1250);
+    }
+  });
+
   $scope.updateRepositoriesList = function() {
-    loadingAnimation('show');
-    $('.main-panel').fadeOut('slow');
-
-    Repository.query({keyword: $scope.repositoryName}, function(repositories) {
-      $scope.noRepositoryFound = (repositories.length == 0) ? true : false;
-      $scope.repositories = repositories;
-
-      loadingAnimation('hide');
-      $scope.showSearchResults(true);
-    });
+    $location.url('/search/' + $scope.repositoryName);
+    updateRepositoriesList($scope, Repository);
   }
 
   $scope.showRepositoryInfo = function(repositoryFullName) {
@@ -184,5 +207,18 @@ function getShortCommitMessage(message) {
   }
 
   return shortMessage;
+}
+
+function updateRepositoriesList($scope, Repository) {
+    loadingAnimation('show');
+    $('.main-panel').fadeOut('slow');
+
+    Repository.query({keyword: $scope.repositoryName}, function(repositories) {
+      $scope.noRepositoryFound = (repositories.length == 0) ? true : false;
+      $scope.repositories = repositories;
+
+      loadingAnimation('hide');
+      $scope.showSearchResults(true);
+    });
 }
 
