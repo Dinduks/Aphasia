@@ -1,214 +1,218 @@
 "use strict";
 
-var module = angular.module('aphasia', ['ngResource'], function($routeProvider) {
-  $routeProvider.when('/search/:keyword', {
-    controller: searchCtrl,
-    templateUrl: 'partials/search.html',
-  });
-  $routeProvider.when('/:username/:repositoryName', {
-    controller: repoInfoCtrl,
-    templateUrl: 'partials/repo_info.html',
-  });
+var module = angular.module('aphasia', ['ngResource'], function ($routeProvider) {
+    $routeProvider.when('/search/:keyword', {
+        controller:  searchCtrl,
+        templateUrl: 'partials/search.html'
+    });
+    $routeProvider.when('/:username/:repositoryName', {
+        controller:  repoInfoCtrl,
+        templateUrl: 'partials/repo_info.html'
+    });
 });
 
 // This object will handle the Ajax API calls concerning the repos
-module.factory('Repository', function($resource) {
-  return $resource('http://localhost::port/repos/:keyword', {keyword: '', port: 4567}, {
-    query: {method: 'GET', isArray: true},
-  });
+module.factory('Repository', function ($resource) {
+    return $resource('http://localhost::port/repos/:keyword', {keyword: '', port: 4567}, {
+        query: {method: 'GET', isArray: true}
+    });
 });
 
 // This one will handle the calls related to the commits
-module.factory('Commit', function($resource) {
-  return $resource('http://localhost::port/repo/:username/:repo/commits', {repository_full_name: '', port: 4567}, {
-    query: {method: 'GET', isArray: true},
-  });
+module.factory('Commit', function ($resource) {
+    return $resource('http://localhost::port/repo/:username/:repo/commits', {repository_full_name: '', port: 4567}, {
+        query: {method: 'GET', isArray: true}
+    });
 });
 
 function searchCtrl($scope, $routeParams) {
-  var keyword;
+    var keyword;
 
-  keyword = $routeParams.keyword;
-  // Fire an event along with sharing the repository name that comes form the URL
-  $scope.$emit('directSearchEvent', { keyword: keyword });
+    keyword = $routeParams.keyword;
+    // Fire an event along with sharing the repository name that comes form the URL
+    $scope.$emit('directSearchEvent', { keyword: keyword });
 }
 
 function repoInfoCtrl($scope, $routeParams, Commit) {
-  var repositoryFullName;
+    var repositoryFullName;
 
-  repositoryFullName = $routeParams.username + '/' + $routeParams.repositoryName;
-  showRepositoryInfo($scope, Commit, repositoryFullName);
+    repositoryFullName = $routeParams.username + '/' + $routeParams.repositoryName;
+    showRepositoryInfo($scope, Commit, repositoryFullName);
 }
 
 function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
-  // Expect the event fired when searching from the URL
-  $scope.$on('directSearchEvent', function(event, args) {
-    $scope.repositoryName = args.keyword;
+    // Expect the event fired when searching from the URL
+    $scope.$on('directSearchEvent', function (event, args) {
+        $scope.repositoryName = args.keyword;
 
-    loadingAnimation('show');
-    $('.main-panel').fadeOut('slow');
-    updateRepositoriesList($scope, Repository);
+        loadingAnimation('show');
+        $('.main-panel').fadeOut('slow');
+        updateRepositoriesList($scope, Repository);
 
-    // Automatically focus the first list element
-    // if the user isn't typing
-    if (!$.isTyping) {
-      setTimeout(function() {$('.repositories-list a').first().focus()}, 1250);
+        // Automatically focus the first list element
+        // if the user isn't typing
+        if (!$.isTyping) {
+            setTimeout(function () {
+                $('.repositories-list a').first().focus()
+            }, 1250);
+        }
+    });
+
+    $scope.updateRepositoriesList = function () {
+        // Update the URL whenever the repository name is changed
+        $location.url('/search/' + $scope.repositoryName);
+        updateRepositoriesList($scope, Repository);
+    };
+
+    $scope.showRepositoryInfo = function (repositoryFullName) {
+        showRepositoryInfo($scope, Commit, repositoryFullName);
+    };
+
+    $scope.showSearchResults = function (onSearch) {
+        $('.search-results').fadeIn();
+        $('.repository-info').slideUp();
+        // Don't change the focus to the repos list
+        // if the user's focus is on the search field
+        if (onSearch) return;
+        $('.repositories-list a').first().focus();
+    };
+
+    $scope.parseRepositoryInfo = function (commits) {
+        var contributors;
+
+        contributors = getContributors(commits);
+        $scope.contributors = contributors;
     }
-  });
-
-  $scope.updateRepositoriesList = function() {
-    // Update the URL whenever the repository name is changed
-    $location.url('/search/' + $scope.repositoryName);
-    updateRepositoriesList($scope, Repository);
-  }
-
-  $scope.showRepositoryInfo = function(repositoryFullName) {
-    showRepositoryInfo($scope, Commit, repositoryFullName);
-  }
-
-  $scope.showSearchResults = function(onSearch) {
-    $('.search-results').fadeIn();
-    $('.repository-info').slideUp();
-    // Don't change the focus to the repos list
-    // if the user's focus is on the search field
-    if (onSearch) return;
-    $('.repositories-list a').first().focus();
-  }
-
-  $scope.parseRepositoryInfo = function(commits) {
-    var contributors;
-
-    contributors = getContributors(commits);
-    $scope.contributors = contributors;
-  }
 }
 
 // Show or hide the loading gif
 function loadingAnimation(action) {
-  if (action == 'hide')
-    $('.repository-input').css('background-image', 'none');
-  else if (action == 'show')
-    $('.repository-input').css('background-image', 'url("./img/loading.gif")');
-  else
-    throw 'loadingAnimation() has no "' + action + '" option.';
+    if (action == 'hide')
+        $('.repository-input').css('background-image', 'none');
+    else if (action == 'show')
+        $('.repository-input').css('background-image', 'url("./img/loading.gif")');
+    else
+        throw 'loadingAnimation() has no "' + action + '" option.';
 }
 
 function hideSearchResults() {
-  $('.search-results').slideUp();
-  $('.search-results').css('display', 'block');
+    $('.search-results').slideUp();
+    $('.search-results').css('display', 'block');
 }
 
 function displayRepositoryInfo() {
-  $('.repository-info').slideDown();
+    $('.repository-info').slideDown();
 }
 
 function getContributors(commits) {
-  var contributors = {},
-      oneSingleCommitPercentage = Math.ceil(1 / commits.length * 100),
-      committer;
+    var contributors = {},
+        oneSingleCommitPercentage = Math.ceil(1 / commits.length * 100),
+        committer;
 
-  for (var i=0; i < commits.length; i++) {
-    committer = commits[i].author;
-    if (!contributors[committer.login]) {
-      contributors[committer.login] = {
-        contributionsCounter:     1,
-        avatar_url:               committer.avatar_url,
-        url:                      committer.url,
-        contributionsPercentage:  oneSingleCommitPercentage,
-      }
-    } else {
-      contributors[committer.login].contributionsCounter++;
-      contributors[committer.login].contributionsPercentage = Math.ceil(contributors[committer.login].contributionsCounter / commits.length * 100);
+    for (var i = 0; i < commits.length; i++) {
+        committer = commits[i].author;
+        if (!contributors[committer.login]) {
+            contributors[committer.login] = {
+                contributionsCounter:    1,
+                avatar_url:              committer.avatar_url,
+                url:                     committer.url,
+                contributionsPercentage: oneSingleCommitPercentage,
+            }
+        } else {
+            contributors[committer.login].contributionsCounter++;
+            contributors[committer.login].contributionsPercentage = Math.ceil(contributors[committer.login].contributionsCounter / commits.length * 100);
+        }
     }
-  }
 
-  return contributors;
+    return contributors;
 }
 
 // Create the timeline as it should be displayed
 function getTimeline(commits) {
-  var oldestCommitTimestamp,
-      newestCommitTimestamp,
-      timestampsDifference,
-      timeline = {},
-      commit,
-      percentage,
-      i;
+    var oldestCommitTimestamp,
+        newestCommitTimestamp,
+        timestampsDifference,
+        timeline = {},
+        commit,
+        percentage,
+        i;
 
-  oldestCommitTimestamp = new Date(commits[commits.length - 1].date).getTime() / 1000;
-  newestCommitTimestamp = new Date(commits[0].date).getTime() / 1000;
-  timestampsDifference  = newestCommitTimestamp - oldestCommitTimestamp;
+    oldestCommitTimestamp = new Date(commits[commits.length - 1].date).getTime() / 1000;
+    newestCommitTimestamp = new Date(commits[0].date).getTime() / 1000;
+    timestampsDifference = newestCommitTimestamp - oldestCommitTimestamp;
 
-  for (i=commits.length - 1; i > 0; i--) {
-    commit = commits[i];
-    percentage = (((new Date(commit.date).getTime() / 1000) - oldestCommitTimestamp) / timestampsDifference * 100);
-    timeline[percentage] = commit;
-  }
+    for (i = commits.length - 1; i > 0; i--) {
+        commit = commits[i];
+        percentage = (((new Date(commit.date).getTime() / 1000) - oldestCommitTimestamp) / timestampsDifference * 100);
+        timeline[percentage] = commit;
+    }
 
-  return timeline;
+    return timeline;
 }
 
 function createCommitPopovers(timeline) {
-  var i = 0,
-      milestone,
-      index,
-      commit;
+    var i = 0,
+        milestone,
+        index,
+        commit;
 
-  for (index in timeline) {
-    commit = timeline[index];
+    for (index in timeline) {
+        commit = timeline[index];
 
-    $('.timeline-commit-' + i + ' a').popover({
-      placement:  get_popover_placement,
-      title:      getShortCommitMessage(commit.message),
-      trigger:    'manual',
-    });
+        $('.timeline-commit-' + i + ' a').popover({
+            placement: get_popover_placement,
+            title:     getShortCommitMessage(commit.message),
+            trigger:   'manual'
+        });
 
-    $('.timeline-commit-' + i + ' a').click(function() {
-      $('.timeline-commit a').popover('hide');
-      $(this).popover('show');
-      return false;
-    });
+        $('.timeline-commit-' + i + ' a').click(function () {
+            $('.timeline-commit a').popover('hide');
+            $(this).popover('show');
+            return false;
+        });
 
-    $('html').click(function() { $('.timeline-commit a').popover('hide'); });
+        $('html').click(function () {
+            $('.timeline-commit a').popover('hide');
+        });
 
-    i++;
-  }
+        i++;
+    }
 }
 
 /**
  * Source: http://stackoverflow.com/a/9261887/604041
  */
 function get_popover_placement(pop, dom_el) {
-  var width = window.innerWidth;
-  if (width<500) return 'bottom';
-  var left_pos = $(dom_el).offset().left;
-  if (width - left_pos > 400) return 'right';
-  return 'left';
+    var width = window.innerWidth;
+    if (width < 500) return 'bottom';
+    var left_pos = $(dom_el).offset().left;
+    if (width - left_pos > 400) return 'right';
+    return 'left';
 }
 
 function getShortCommitMessage(message) {
-  var shortMessage;
+    var shortMessage;
 
-  if (/Merge pull request/.test(message)) {
-    // If the commit is a PR merge, display the commit message only
-    shortMessage = 'Merge PR: '
-    shortMessage += message.split("\n\n")[1];
-  } else {
-    shortMessage = message.split("\n")[0];
-  }
+    if (/Merge pull request/.test(message)) {
+        // If the commit is a PR merge, display the commit message only
+        shortMessage = 'Merge PR: ';
+        shortMessage += message.split("\n\n")[1];
+    } else {
+        shortMessage = message.split("\n")[0];
+    }
 
-  return shortMessage;
+    return shortMessage;
 }
 
 function updateRepositoriesList($scope, Repository) {
-    setTimeout(function() {
+    setTimeout(function () {
         if ((new Date()).getTime() - $.lastRepositoryKeywordUpdate > 500) {
-            Repository.query({keyword: $scope.repositoryName}, function(repositories) {
+            Repository.query({keyword: $scope.repositoryName}, function (repositories) {
                 loadingAnimation('show');
                 $('.main-panel').fadeOut('slow');
                 // This boolean is used to show or hide the
                 // "no repo called ... was found" message
-                $scope.noRepositoryFound = (repositories.length == 0) ? true : false;
+                $scope.noRepositoryFound = (repositories.length == 0);
                 $scope.repositories = repositories;
 
                 loadingAnimation('hide');
@@ -229,28 +233,30 @@ function showRepositoryInfo($scope, Commit, repositoryFullName) {
     hideSearchResults();
     loadingAnimation('show');
 
-    username   = repositoryFullName.split('/')[0]
+    username = repositoryFullName.split('/')[0]
     repository = repositoryFullName.split('/')[1]
-    Commit.query({username: username, repo: repository}, function(commits) {
-      // This boolean is used to show or hide the
-      // "this repo has no commits" message
-      $scope.noCommitFound = (commits.length == 0) ? true : false;
+    Commit.query({username: username, repo: repository}, function (commits) {
+        // This boolean is used to show or hide the
+        // "this repo has no commits" message
+        $scope.noCommitFound = (commits.length == 0);
 
-      if ($scope.noCommitFound) {
-        displayRepositoryInfo();
+        if ($scope.noCommitFound) {
+            displayRepositoryInfo();
+            loadingAnimation('hide');
+            return;
+        }
+
+        $scope.parseRepositoryInfo(commits);
+        $scope.totalCommits = commits.length;
+
+        timeline = getTimeline(commits);
+        $scope.timeline = timeline;
+        setTimeout(function () {
+            createCommitPopovers(timeline)
+        }, 1000);
+
         loadingAnimation('hide');
-        return;
-      }
-
-      $scope.parseRepositoryInfo(commits);
-      $scope.totalCommits = commits.length;
-
-      timeline = getTimeline(commits);
-      $scope.timeline = timeline;
-      setTimeout(function() {createCommitPopovers(timeline)}, 1000);
-
-      loadingAnimation('hide');
-      displayRepositoryInfo();
+        displayRepositoryInfo();
     });
 }
 
