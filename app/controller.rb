@@ -24,4 +24,13 @@ class AphasiaApp < Sinatra::Application
 
   options '/repo/:username/:repo/commits' do
   end
+
+  get '/user/:username/repos' do
+    repositories = @aphasia.find_user_repos(params['username'])
+    repositories_array = RepositoryConverter.create_hash_from_an_array_of_objects repositories
+    JSON.pretty_generate repositories_array
+  end
+
+  options '/user/:username/repos' do
+  end
 end
