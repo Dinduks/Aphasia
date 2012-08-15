@@ -50,9 +50,12 @@ class RepositoryConverter
     repo.forks       = hash['forks']
     repo.watchers    = hash['watchers']
     repo.size        = hash['size']
-    repo.pushed_at   = DateTime.iso8601 hash['pushed_at']
-    repo.created_at  = DateTime.iso8601 hash['created_at']
-    repo.updated_at  = DateTime.iso8601 hash['updated_at']
+    begin
+      repo.pushed_at   = DateTime.iso8601 hash['pushed_at']
+      repo.created_at  = DateTime.iso8601 hash['created_at']
+      repo.updated_at  = DateTime.iso8601 hash['updated_at']
+    rescue
+    end
 
     repo
   end

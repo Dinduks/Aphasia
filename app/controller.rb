@@ -26,7 +26,11 @@ class AphasiaApp < Sinatra::Application
   end
 
   get '/user/:username/repos' do
-    repositories = @aphasia.find_user_repos(params['username'])
+    begin
+      repositories = @aphasia.find_user_repos(params['username'])
+    rescue UserNotFound
+      raise Sinatra::NotFound
+    end
     repositories_array = RepositoryConverter.create_hash_from_an_array_of_objects repositories
     JSON.pretty_generate repositories_array
   end

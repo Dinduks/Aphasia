@@ -1,7 +1,11 @@
 "use strict";
 
 var module = angular.module('aphasia', ['ngResource'], function ($routeProvider) {
-    $routeProvider.when('/search/:keyword', {
+    $routeProvider.when('/searchrepo/:keyword', {
+        controller:  searchCtrl,
+        templateUrl: 'partials/search.html'
+    });
+    $routeProvider.when('/searchuser/:keyword', {
         controller:  searchCtrl,
         templateUrl: 'partials/search.html'
     });
@@ -18,9 +22,15 @@ module.factory('Repository', function ($resource) {
     });
 });
 
+module.factory('UserRepository', function ($resource) {
+    return $resource('http://localhost::port/user/:keyword/repos', {keyword: '', port:4567}, {
+        query:{method:'GET', isArray:true}
+    });
+});
+
 // This one will handle the calls related to the commits
 module.factory('Commit', function ($resource) {
-    return $resource('http://localhost::port/repo/:username/:repo/commits', {repository_full_name: '', port: 4567}, {
+    return $resource('http://localhost::port/repo/:username/:repo/commits', {port: 4567}, {
         query: {method: 'GET', isArray: true}
     });
 });
@@ -40,14 +50,22 @@ function repoInfoCtrl($scope, $routeParams, Commit) {
     showRepositoryInfo($scope, Commit, repositoryFullName);
 }
 
-function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
+function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
     // Expect the event fired when searching from the URL
     $scope.$on('directSearchEvent', function (event, args) {
-        $scope.repositoryName = args.keyword;
+        $scope.keyword = args.keyword;
 
         loadingAnimation('show');
         $('.main-panel').fadeOut('slow');
-        updateRepositoriesList($scope, Repository);
+        if (/\/searchuser\//.test($location.$$url)) {
+            $scope.searchUrl = 'searchuser';
+            updateRepositoriesList($scope, UserRepository);
+        } else if (/\/searchrepo\//.test($location.$$url)) {
+            $scope.searchUrl = 'searchrepo';
+            updateRepositoriesList($scope, Repository);
+        } else {
+            throw "Unknown search route.";
+        }
 
         // Automatically focus the first list element
         // if the user isn't typing
@@ -59,8 +77,14 @@ function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
     });
 
     $scope.updateRepositoriesList = function () {
-        // Update the URL whenever the repository name is changed
-        $location.url('/search/' + $scope.repositoryName);
+        var repositoryNameLastChar;
+
+        repositoryNameLastChar = $scope.repositoryName.substr($scope.repositoryName.length - 1, $scope.repositoryName.length);
+        if ('/' == repositoryNameLastChar) {
+            $location.url('/searchuser/' + $scope.repositoryName);
+        } else {
+            $location.url('/searchrepo/' + $scope.repositoryName);
+        }
         updateRepositoriesList($scope, Repository);
     };
 
@@ -87,9 +111,9 @@ function AphasiaCtrl($scope, $route, $location, Repository, Commit) {
 
 // Show or hide the loading gif
 function loadingAnimation(action) {
-    if (action == 'hide')
+    if ('hide' == action)
         $('.repository-input').css('background-image', 'none');
-    else if (action == 'show')
+    else if ('show' == action)
         $('.repository-input').css('background-image', 'url("./img/loading.gif")');
     else
         throw 'loadingAnimation() has no "' + action + '" option.';
@@ -184,9 +208,9 @@ function createCommitPopovers(timeline) {
  */
 function get_popover_placement(pop, dom_el) {
     var width = window.innerWidth;
-    if (width < 500) return 'bottom';
+    if (500 > width) return 'bottom';
     var left_pos = $(dom_el).offset().left;
-    if (width - left_pos > 400) return 'right';
+    if (400 < width - left_pos) return 'right';
     return 'left';
 }
 
@@ -205,16 +229,22 @@ function getShortCommitMessage(message) {
 }
 
 function updateRepositoriesList($scope, Repository) {
+    loadingAnimation('show');
     setTimeout(function () {
-        if ((new Date()).getTime() - $.lastRepositoryKeywordUpdate > 500) {
-            Repository.query({keyword: $scope.repositoryName}, function (repositories) {
+        if (500 < (new Date()).getTime() - $.lastRepositoryKeywordUpdate) {
+            Repository.query({keyword: $scope.keyword}, function (repositories) {
                 loadingAnimation('show');
                 $('.main-panel').fadeOut('slow');
                 // This boolean is used to show or hide the
                 // "no repo called ... was found" message
-                $scope.noRepositoryFound = (repositories.length == 0);
-                $scope.repositories = repositories;
+                $scope.noRepositoryFound = (0 == repositories.length);
 
+                $scope.repositories = repositories;
+                loadingAnimation('hide');
+                $scope.showSearchResults(true);
+                $scope.userNotFound = false;
+            }, function() {
+                $scope.userNotFound = true;
                 loadingAnimation('hide');
                 $scope.showSearchResults(true);
             });
@@ -238,7 +268,7 @@ function showRepositoryInfo($scope, Commit, repositoryFullName) {
     Commit.query({username: username, repo: repository}, function (commits) {
         // This boolean is used to show or hide the
         // "this repo has no commits" message
-        $scope.noCommitFound = (commits.length == 0);
+        $scope.noCommitFound = (0 == commits.length);
 
         if ($scope.noCommitFound) {
             displayRepositoryInfo();

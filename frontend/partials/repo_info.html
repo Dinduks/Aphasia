@@ -1,7 +1,12 @@
 <div class="main-panel repository-info">
   <header>
   <h2>{{repositoryTitle}}</h2>
-  <a href="#/search/{{repositoryName}}" ng-click="showSearchResults()" class="return-repositories-list"><span class="icon-circle-arrow-left"></span>return to the repos' list</a>
+  <a href="#/{{searchUrl}}/{{repositoryName}}"
+    ng-click="showSearchResults()"
+    class="return-repositories-list">
+      <span class="icon-circle-arrow-left"></span>
+      return to the repos' list
+  </a>
   </header>
 
   <p ng-show="noCommitFound" ng-hide="!noCommitFound">This repository has no commit.</p>
