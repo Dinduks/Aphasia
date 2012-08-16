@@ -1,17 +1,17 @@
 $(document).ready(function () {
-    setIsTyping(app.isTyping);
+    setIsTyping();
 });
 
 // isTyping is used to check if the user focuses
 // the repository name check box
 function setIsTyping(isTyping) {
-    isTyping = false;
+    app.isTyping = false;
     $('.repository-input').bind({
         focus: function () {
-            isTyping = true;
+            app.isTyping = true;
         },
         mouseout: function () {
-            isTyping = false;
+            app.isTyping = false;
         }
     })
 }
