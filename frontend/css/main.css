@@ -67,27 +67,41 @@ body {
   height: 4px;
   background-color: #555;
   margin-top: 1.8em;
+  margin-bottom: 1.2em;
 }
 
 .timeline {
   width: 95%;
-  height: 4px;
+  height: 20px;
   margin: auto;
   position: relative;
-}
-
-.timeline-commit a {
-  display: block;
-  width: 2px;
-  height: 10px;
 }
 
 .timeline-commit {
   position: absolute;
   bottom: 0;
   width: 2px;
-  height: 10px;
+  height: 40px;
+}
+
+.timeline-commit a {
+  display: block;
+  width: 2px;
+  height: 20px;
+}
+
+.timeline-commit .herp {
   background-color: #0074CC;
+  position: relative;
+  height: 20px;
+}
+
+.timeline-commit .top {
+  bottom: 0px;
+}
+
+.timeline-commit .bottom {
+  bottom: -24px
 }
 
 .popover-content {
@@ -109,4 +123,3 @@ body {
 .repository-info .container h3 {
   margin-top: 1.3em;
 }
-

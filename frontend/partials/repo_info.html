@@ -34,16 +34,18 @@
           <div class="timeline-commit timeline-commit-{{$index}} {{percentage}}"
             style="left: {{percentage}}%;"
             ng-repeat="(percentage, commit) in timeline">
-            <a href="" data-content="
-              By: <a href='https://github.com/{{commit.committer.login}}' target='_blank'>{{commit.committer.login}}</a><br />
-              Date: {{commit.date|date:'MM/dd/yyyy @ h:mma'}}<br />
-              <div class='contributor-picture'>
-                <a href='https://github.com/{{commit.committer.login}}' target='_blank'>
-                  <img src='https://secure.gravatar.com/avatar/{{commit.committer.gravatar_id}}?s=40' alt='{{commit.committer.login}}' />
-                </a>
-              </div>
-              More info on <a href='{{commit.url}}' target='_blank'>GitHub</a>
-              "></a>
+            <div class="herp" ng-class-odd="'top'" ng-class-even="'bottom'">
+              <a href="" data-content="
+                By: <a href='https://github.com/{{commit.committer.login}}' target='_blank'>{{commit.committer.login}}</a><br />
+                Date: {{commit.date|date:'MM/dd/yyyy @ h:mma'}}<br />
+                <div class='contributor-picture'>
+                  <a href='https://github.com/{{commit.committer.login}}' target='_blank'>
+                    <img src='https://secure.gravatar.com/avatar/{{commit.committer.gravatar_id}}?s=40' alt='{{commit.committer.login}}' />
+                  </a>
+                </div>
+                More info on <a href='{{commit.url}}' target='_blank'>GitHub</a>
+                "></a>
+            </div>
           </div>
         </div>
       </div>

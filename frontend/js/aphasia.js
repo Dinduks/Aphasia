@@ -165,7 +165,7 @@ function getTimeline(commits) {
     newestCommitTimestamp = new Date(commits[0].date).getTime() / 1000;
     timestampsDifference = newestCommitTimestamp - oldestCommitTimestamp;
 
-    for (i = commits.length - 1; i > 0; i--) {
+    for (i = commits.length - 1; i >= 0; i--) {
         commit = commits[i];
         percentage = (((new Date(commit.date).getTime() / 1000) - oldestCommitTimestamp) / timestampsDifference * 100);
         timeline[percentage] = commit;
