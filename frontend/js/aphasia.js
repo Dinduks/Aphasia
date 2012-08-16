@@ -13,6 +13,9 @@ var module = angular.module('aphasia', ['ngResource'], function ($routeProvider)
         controller:  repoInfoCtrl,
         templateUrl: 'partials/repo_info.html'
     });
+    $routeProvider.otherwise({
+        redirectTo: '/'
+    });
 });
 
 // This object will handle the Ajax API calls concerning the repos
@@ -78,6 +81,8 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
 
     $scope.updateRepositoriesList = function () {
         var repositoryNameLastChar;
+
+        $.manualSearch = true;
 
         repositoryNameLastChar = $scope.repositoryName.substr($scope.repositoryName.length - 1, $scope.repositoryName.length);
         if ('/' == repositoryNameLastChar) {
@@ -260,6 +265,7 @@ function showRepositoryInfo($scope, Commit, repositoryFullName) {
         repository;
 
     $scope.repositoryTitle = repositoryFullName;
+    $scope.manualSearch = ($.manualSearch == true) ? true : false;
     hideSearchResults();
     loadingAnimation('show');
 

@@ -3,6 +3,7 @@
   <h2>{{repositoryTitle}}</h2>
   <a href="#/{{searchUrl}}/{{repositoryName}}"
     ng-click="showSearchResults()"
+    ng-show="manualSearch" ng-hide="!manualSearch"
     class="return-repositories-list">
       <span class="icon-circle-arrow-left"></span>
       return to the repos' list
