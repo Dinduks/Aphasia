@@ -20,22 +20,28 @@ var module = angular.module('aphasia', ['ngResource'], function ($routeProvider)
 
 // This object will handle the Ajax API calls concerning the repos
 module.factory('Repository', function ($resource) {
-    return $resource('http://localhost::port/repos/:keyword', {keyword: '', port: 4567}, {
-        query: {method: 'GET', isArray: true}
-    });
+    return $resource(
+        'http://:url::port/repos/:keyword',
+        {url: app.config.apiUrl, port: app.config.apiPort},
+        {query: {method: 'GET', isArray: true}}
+    );
 });
 
 module.factory('UserRepository', function ($resource) {
-    return $resource('http://localhost::port/user/:keyword/repos', {keyword: '', port:4567}, {
-        query:{method:'GET', isArray:true}
-    });
+    return $resource(
+        'http://:url::port/user/:keyword/repos',
+        {url: app.config.apiUrl, port: app.config.apiPort},
+        {query:{method:'GET', isArray:true}}
+    );
 });
 
 // This one will handle the calls related to the commits
 module.factory('Commit', function ($resource) {
-    return $resource('http://localhost::port/repo/:username/:repo/commits', {port: 4567}, {
-        query: {method: 'GET', isArray: true}
-    });
+    return $resource(
+        'http://:url::port/repo/:username/:repo/commits',
+        {url: app.config.apiUrl, port: app.config.apiPort},
+        {query: {method: 'GET', isArray: true}}
+    );
 });
 
 function searchCtrl($scope, $routeParams) {
@@ -72,7 +78,7 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
 
         // Automatically focus the first list element
         // if the user isn't typing
-        if (!$.isTyping) {
+        if (!app.isTyping) {
             setTimeout(function () {
                 $('.repositories-list a').first().focus()
             }, 1250);
@@ -82,7 +88,7 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
     $scope.updateRepositoriesList = function () {
         var repositoryNameLastChar;
 
-        $.manualSearch = true;
+        app.manualSearch = true;
 
         repositoryNameLastChar = $scope.repositoryName.substr($scope.repositoryName.length - 1, $scope.repositoryName.length);
         if ('/' == repositoryNameLastChar) {
@@ -236,7 +242,7 @@ function getShortCommitMessage(message) {
 function updateRepositoriesList($scope, Repository) {
     loadingAnimation('show');
     setTimeout(function () {
-        if (500 < (new Date()).getTime() - $.lastRepositoryKeywordUpdate) {
+        if (500 < (new Date()).getTime() - app.lastRepositoryKeywordUpdate) {
             Repository.query({keyword: $scope.keyword}, function (repositories) {
                 loadingAnimation('show');
                 $('.main-panel').fadeOut('slow');
@@ -256,7 +262,7 @@ function updateRepositoriesList($scope, Repository) {
         }
     }, 500);
 
-    $.lastRepositoryKeywordUpdate = (new Date()).getTime();
+    app.lastRepositoryKeywordUpdate = (new Date()).getTime();
 }
 
 function showRepositoryInfo($scope, Commit, repositoryFullName) {
@@ -265,7 +271,7 @@ function showRepositoryInfo($scope, Commit, repositoryFullName) {
         repository;
 
     $scope.repositoryTitle = repositoryFullName;
-    $scope.manualSearch = ($.manualSearch == true) ? true : false;
+    $scope.manualSearch = (app.manualSearch == true) ? true : false;
     hideSearchResults();
     loadingAnimation('show');
 
