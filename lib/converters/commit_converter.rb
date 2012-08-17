@@ -51,6 +51,8 @@ class CommitConverter
     hash['author']['url']         = commit.author.url
     hash['author']['gravatar_id'] = commit.author.gravatar_id
     hash['author']['id']          = commit.author.id
+    hash['author']['name']        = commit.author.name
+    hash['author']['email']       = commit.author.email
 
     hash['committer'] = Hash.new
     hash['committer']['login']       = commit.committer.login
@@ -58,6 +60,8 @@ class CommitConverter
     hash['committer']['url']         = commit.committer.url
     hash['committer']['gravatar_id'] = commit.committer.gravatar_id
     hash['committer']['id']          = commit.committer.id
+    hash['committer']['name']        = commit.committer.name
+    hash['committer']['email']       = commit.committer.email
 
     hash
   end

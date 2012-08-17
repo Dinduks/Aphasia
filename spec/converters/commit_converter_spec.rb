@@ -63,17 +63,21 @@ describe 'CommitConverter' do
       hash['message'].should == 'now onRequestCompletion is called on response sent or socket closing'
       hash['date'].should    == '2012-08-10T14:09:54Z'
 
-      hash['author']['login']       == 'sadache'
-      hash['author']['avatar_url']  == 'https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png'
-      hash['author']['url']         == "https://github.com/#{commit.author.login}"
-      hash['author']['gravatar_id'] == 'd349588ba91256515f7e2aa315e8cfae'
-      hash['author']['id']          == 60507
+      hash['author']['login'].should       == 'sadache'
+      hash['author']['avatar_url'].should  == 'https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png'
+      hash['author']['url'].should         == "https://github.com/#{commit.author.login}"
+      hash['author']['gravatar_id'].should == 'd349588ba91256515f7e2aa315e8cfae'
+      hash['author']['id'].should          == 60507
+      hash['author']['name'].should        == 'Sadek Drobi'
+      hash['author']['email'].should       == 'github@sadekdrobi.com'
 
-      hash['committer']['login']       == 'sadache'
-      hash['committer']['avatar_url']  == 'https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png'
-      hash['committer']['url']         == "https://github.com/#{commit.committer.login}"
-      hash['committer']['gravatar_id'] == 'd349588ba91256515f7e2aa315e8cfae'
-      hash['committer']['id']          == 60507
+      hash['committer']['login'].should       == 'sadache'
+      hash['committer']['avatar_url'].should  == 'https://secure.gravatar.com/avatar/d349588ba91256515f7e2aa315e8cfae?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png'
+      hash['committer']['url'].should         == "https://github.com/#{commit.committer.login}"
+      hash['committer']['gravatar_id'].should == 'd349588ba91256515f7e2aa315e8cfae'
+      hash['committer']['id'].should          == 60507
+      hash['committer']['name'].should        == 'Sadek Drobi'
+      hash['committer']['email'].should       == 'github@sadekdrobi.com'
     end
   end
 
