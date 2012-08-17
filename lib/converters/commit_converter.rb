@@ -16,6 +16,9 @@ class CommitConverter
       commit.author.url         = "https://github.com/#{commit.author.login}"
     end
 
+    commit.author.name        = hash['commit']['author']['name']
+    commit.author.email       = hash['commit']['author']['email']
+
     commit.committer = User.new
     if hash['committer']
       commit.committer.login       = hash['committer']['login']
@@ -24,6 +27,9 @@ class CommitConverter
       commit.committer.id          = hash['committer']['id']
       commit.committer.url         = "https://github.com/#{commit.committer.login}"
     end
+
+    commit.committer.name        = hash['commit']['committer']['name']
+    commit.committer.email       = hash['commit']['committer']['email']
 
     commit
   end

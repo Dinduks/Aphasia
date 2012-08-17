@@ -45,6 +45,37 @@
   {
     "parents": [
       {
+        "url": "https://api.github.com/repos/sadache/snap-core/commits/e8294b37500d3f9e5a9f71751e4a2da2629b2b6d",
+        "sha": "e8294b37500d3f9e5a9f71751e4a2da2629b2b6d"
+      }
+    ],
+    "author": null,
+    "committer": null,
+    "commit": {
+      "comment_count": 0,
+      "message": "Change content-length and enumerator lengths from Int to Int64",
+      "author": {
+        "email": "shu@navi.rfrn.org",
+        "name": "shu",
+        "date": "2010-06-07T03:09:51-07:00"
+      },
+      "committer": {
+        "email": "shu@navi.rfrn.org",
+        "name": "shu",
+        "date": "2010-06-07T03:09:51-07:00"
+      },
+      "url": "https://api.github.com/repos/sadache/snap-core/git/commits/d9d119f04cc979ea3399e476c08a901d1be585fe",
+      "tree": {
+        "url": "https://api.github.com/repos/sadache/snap-core/git/trees/cae9b514756d7ab88c111cd3951099225d46a8d0",
+        "sha": "cae9b514756d7ab88c111cd3951099225d46a8d0"
+      }
+    },
+    "url": "https://api.github.com/repos/sadache/snap-core/commits/d9d119f04cc979ea3399e476c08a901d1be585fe",
+    "sha": "d9d119f04cc979ea3399e476c08a901d1be585fe"
+  },
+  {
+    "parents": [
+      {
         "url": "https://api.github.com/repos/playframework/Play20/commits/30c3c034453f6195376bd74a8618cef460aa2907",
         "sha": "30c3c034453f6195376bd74a8618cef460aa2907"
       }

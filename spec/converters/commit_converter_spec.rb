@@ -6,6 +6,7 @@ describe 'CommitConverter' do
       http_client = GitHubClientMock.new
       hash = http_client.call '/repos_playframework_Play20_commits'
       @commit = CommitConverter.fill_object_from_hash hash[0], 'playframework/Play20'
+      @lacking_info_commit = CommitConverter.fill_object_from_hash hash[1], 'playframework/Play20'
     end
 
     it 'should return a Commit object' do
@@ -37,6 +38,16 @@ describe 'CommitConverter' do
       @commit.committer.url.should         == "https://github.com/#{@commit.committer.login}"
       @commit.committer.gravatar_id.should == 'd349588ba91256515f7e2aa315e8cfae'
       @commit.committer.id.should          == 60507
+    end
+
+    it 'should correctly fill objects that lack some info (such as author info)' do
+      @lacking_info_commit.author.should be_a User
+      @lacking_info_commit.author.name.should  == 'shu'
+      @lacking_info_commit.author.email.should == 'shu@navi.rfrn.org'
+
+      @lacking_info_commit.committer.should be_a User
+      @lacking_info_commit.committer.name.should  == 'shu'
+      @lacking_info_commit.committer.email.should == 'shu@navi.rfrn.org'
     end
   end
 
