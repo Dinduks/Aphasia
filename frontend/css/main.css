@@ -21,6 +21,10 @@ body {
   background-position: 98% 10px;
 }
 
+.loading-gif {
+  background-image: url('../img/loading.gif');
+}
+
 .main-panel {
   font-size: 1.5em;
   color: #555;
@@ -123,3 +127,4 @@ body {
 .repository-info .container h3 {
   margin-top: 1.3em;
 }
+

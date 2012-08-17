@@ -106,10 +106,6 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
     $scope.showSearchResults = function (onSearch) {
         $('.search-results').fadeIn();
         $('.repository-info').slideUp();
-        // Don't change the focus to the repos list
-        // if the user's focus is on the search field
-        if (onSearch) return;
-        $('.repositories-list a').first().focus();
     };
 
     $scope.parseRepositoryInfo = function (commits) {
@@ -123,16 +119,15 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
 // Show or hide the loading gif
 function loadingAnimation(action) {
     if ('hide' == action)
-        $('.repository-input').css('background-image', 'none');
+        $('.repository-input').removeClass('loading-gif');
     else if ('show' == action)
-        $('.repository-input').css('background-image', 'url("./img/loading.gif")');
+        $('.repository-input').addClass('loading-gif');
     else
         throw 'loadingAnimation() has no "' + action + '" option.';
 }
 
 function hideSearchResults() {
     $('.search-results').slideUp();
-    $('.search-results').css('display', 'block');
 }
 
 function displayRepositoryInfo() {
@@ -162,7 +157,6 @@ function getContributors(commits) {
     return contributors;
 }
 
-// Create the timeline as it should be displayed
 function getTimeline(commits) {
     var oldestCommitTimestamp,
         newestCommitTimestamp,
@@ -229,7 +223,6 @@ function getShortCommitMessage(message) {
     var shortMessage;
 
     if (/Merge pull request/.test(message)) {
-        // If the commit is a PR merge, display the commit message only
         shortMessage = 'Merge PR: ';
         shortMessage += message.split("\n\n")[1];
     } else {
@@ -246,18 +239,16 @@ function updateRepositoriesList($scope, Repository) {
             Repository.query({keyword: $scope.keyword}, function (repositories) {
                 loadingAnimation('show');
                 $('.main-panel').fadeOut('slow');
-                // This boolean is used to show or hide the
-                // "no repo called ... was found" message
                 $scope.noRepositoryFound = (0 == repositories.length);
 
                 $scope.repositories = repositories;
                 loadingAnimation('hide');
-                $scope.showSearchResults(true);
+                $scope.showSearchResults();
                 $scope.userNotFound = false;
             }, function() {
                 $scope.userNotFound = true;
                 loadingAnimation('hide');
-                $scope.showSearchResults(true);
+                $scope.showSearchResults();
             });
         }
     }, 500);
