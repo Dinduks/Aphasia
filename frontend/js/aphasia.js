@@ -138,7 +138,8 @@ function getContributors(commits) {
     var contributors = {},
         oneSingleCommitPercentage = Math.ceil(1 / commits.length * 100),
         committer,
-        commit;
+        commit,
+        sortedContributors;
 
     for (var i = 0; i < commits.length; i++) {
         commit = commits[i];
@@ -159,7 +160,24 @@ function getContributors(commits) {
         }
     }
 
-    return contributors;
+    sortedContributors = sortContributors(contributors);
+
+    return sortedContributors;
+}
+
+function sortContributors(contributors) {
+    var index,
+        sortedContributors = [];
+
+    for (var index in contributors) {
+        sortedContributors.push(contributors[index]);
+    }
+
+    sortedContributors = sortedContributors.sort(function (a, b) {
+        return a.contributionsCounter < b.contributionsCounter;
+    });
+
+    return sortedContributors;
 }
 
 function getTimeline(commits) {
