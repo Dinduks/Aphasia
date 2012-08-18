@@ -137,17 +137,22 @@ function displayRepositoryInfo() {
 function getContributors(commits) {
     var contributors = {},
         oneSingleCommitPercentage = Math.ceil(1 / commits.length * 100),
-        committer;
+        committer,
+        commit;
 
     for (var i = 0; i < commits.length; i++) {
-        committer = commits[i].author;
+        commit = commits[i];
+        committer = commit.author;
         if (!contributors[committer.login]) {
             contributors[committer.login] = {
                 contributionsCounter:    1,
                 avatar_url:              committer.avatar_url,
                 url:                     committer.url,
                 contributionsPercentage: oneSingleCommitPercentage,
-            }
+                name:                    committer.name,
+                email:                   committer.email
+            };
+            contributors[committer.login].displayGithubUrl = (committer.login) ? 'true' : 'false';
         } else {
             contributors[committer.login].contributionsCounter++;
             contributors[committer.login].contributionsPercentage = Math.ceil(contributors[committer.login].contributionsCounter / commits.length * 100);
@@ -172,6 +177,9 @@ function getTimeline(commits) {
 
     for (i = commits.length - 1; i >= 0; i--) {
         commit = commits[i];
+
+        commit.displayGithubUrl = (commit.committer.login) ? 'yes' : 'no';
+
         percentage = (((new Date(commit.date).getTime() / 1000) - oldestCommitTimestamp) / timestampsDifference * 100);
         timeline[percentage] = commit;
     }

@@ -94,10 +94,14 @@ body {
   height: 20px;
 }
 
-.timeline-commit .herp {
+.timeline-commit .marker {
   background-color: #0074CC;
   position: relative;
   height: 20px;
+}
+
+.popover-inner .no {
+  display: none;
 }
 
 .timeline-commit .top {

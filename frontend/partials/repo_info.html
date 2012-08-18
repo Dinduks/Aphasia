@@ -15,9 +15,15 @@
   <div ng-show="!noCommitFound" ng-hide="noCommitFound" class="container">
     <div class="contributors">
       <h3>Contributors</h3>
-      <ul ng-repeat="(name, contributor) in contributors">
+      <ul ng-repeat="contributor in contributors">
         <li>
-          <a href="{{contributor.url}}" target="_blank"><span class="committer-name">{{name}}</span></a>
+          <ng-switch on="contributor.displayGithubUrl">
+            <a href="{{contributor.url}}" ng-switch-when="true" target="_blank">
+              <span class="committer-name">{{contributor.name}}</span>
+            </a>
+            <span ng-switch-when="false" class="committer-name">{{contributor.name}}</span>
+          </ng-switch>
+
           <span class="committer-score">
             - {{contributor.contributionsCounter}}
             <ng-pluralize count="contributor.contributionsCounter" when="{'one': 'commit', 'other': 'commits'}"></ng-pluralize>
@@ -35,9 +41,11 @@
           <div class="timeline-commit timeline-commit-{{$index}} {{percentage}}"
             style="left: {{percentage}}%;"
             ng-repeat="(percentage, commit) in timeline">
-            <div class="herp" ng-class-odd="'top'" ng-class-even="'bottom'">
+            <div class="marker" ng-class-odd="'top'" ng-class-even="'bottom'">
               <a href="" data-content="
-                By: <a href='https://github.com/{{commit.committer.login}}' target='_blank'>{{commit.committer.login}}</a><br />
+                <div class='{{commit.displayGithubUrl}}'>
+                  By: <a href='https://github.com/{{commit.committer.login}}' target='_blank'>{{commit.committer.login}}</a><br />
+                </div>
                 Date: {{commit.date|date:'MM/dd/yyyy @ h:mma'}}<br />
                 <div class='contributor-picture'>
                   <a href='https://github.com/{{commit.committer.login}}' target='_blank'>
