@@ -64,6 +64,9 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
     $scope.$on('directSearchEvent', function (event, args) {
         $scope.keyword = args.keyword;
 
+        app.manualSearch = true;
+        $scope.repositoryName = $scope.keyword;
+
         loadingAnimation('show');
         $('.main-panel').fadeOut('slow');
         if (/\/searchuser\//.test($location.$$url)) {
