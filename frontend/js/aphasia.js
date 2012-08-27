@@ -47,6 +47,7 @@ module.factory('Commit', function ($resource) {
 function searchCtrl($scope, $routeParams) {
     var keyword;
 
+    hideAllPopovers();
     keyword = $routeParams.keyword;
     // Fire an event along with sharing the repository name that comes form the URL
     $scope.$emit('directSearchEvent', { keyword: keyword });
@@ -320,5 +321,13 @@ function showRepositoryInfo($scope, Commit, repositoryFullName) {
         loadingAnimation('hide');
         displayRepositoryInfo();
     });
+}
+
+function hideAllPopovers() {
+    try {
+        $('.popover').fadeOut();
+        $('.popover').remove();
+    } catch(e) {
+    }
 }
 
