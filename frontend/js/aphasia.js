@@ -18,7 +18,6 @@ var module = angular.module('aphasia', ['ngResource'], function ($routeProvider)
     });
 });
 
-// This object will handle the Ajax API calls concerning the repos
 module.factory('Repository', function ($resource) {
     return $resource(
         'http://:url::port/repos/:keyword',
@@ -35,7 +34,6 @@ module.factory('UserRepository', function ($resource) {
     );
 });
 
-// This one will handle the calls related to the commits
 module.factory('Commit', function ($resource) {
     return $resource(
         'http://:url::port/repo/:username/:repo/commits',
@@ -101,7 +99,6 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
         } else {
             $location.url('/searchrepo/' + $scope.repositoryName);
         }
-        updateRepositoriesList($scope, Repository);
     };
 
     $scope.showRepositoryInfo = function (repositoryFullName) {
