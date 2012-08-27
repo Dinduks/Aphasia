@@ -71,6 +71,7 @@ function AphasiaCtrl($scope, $location, Repository, UserRepository, Commit) {
         loadingAnimation('show');
         $('.main-panel').fadeOut('slow');
         if (/\/searchuser\//.test($location.$$url)) {
+            $scope.repositoryName += '/';
             $scope.searchUrl = 'searchuser';
             updateRepositoriesList($scope, UserRepository);
         } else if (/\/searchrepo\//.test($location.$$url)) {
