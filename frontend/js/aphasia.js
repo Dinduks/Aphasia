@@ -254,9 +254,9 @@ function getShortCommitMessage(message) {
 
     if (/Merge pull request/.test(message)) {
         shortMessage = 'Merge PR: ';
-        shortMessage += message.split("\n\n")[1];
+        shortMessage += $.trim(message.split("\n\n")[1]);
     } else {
-        shortMessage = message.split("\n")[0];
+        shortMessage = $.trim(message.split("\n")[0]);
     }
 
     return shortMessage;
@@ -323,10 +323,12 @@ function showRepositoryInfo($scope, Commit, repositoryFullName) {
     });
 }
 
-function hideAllPopovers() {
+function hideAllPopovers(element) {
+    element = typeof element !== 'undefined' ? element : $('.popover');
+
     try {
-        $('.popover').fadeOut();
-        $('.popover').remove();
+        element.fadeOut();
+        element.remove();
     } catch(e) {
     }
 }
